@@ -4,6 +4,9 @@ import Range from "../Components/Range";
 import pattern from "../Components/assets/img/main/plus-dark-pattern.png";
 import { keyframes } from "styled-components";
 import JJMain from "../Components/assets/img/main/jjMain.png";
+
+import SectionOne from "./SectionOne";
+
 const Home = () => {
   return (
     <Container>
@@ -23,6 +26,7 @@ const Home = () => {
 export default Home;
 
 const Container = styled.div`
+  position: relative;
   width: 100%;
   height: 100vh;
   background: rgb(108, 171, 221);
@@ -145,6 +149,7 @@ const MainText = styled.div`
   line-height: 1.3;
   transition: all 0.7s;
   z-index: 2;
+  overflow: hidden;
   @media ${({ theme }) => theme.lg} {
     color: ${({ theme }) => theme.white};
     font-size: 36px;
@@ -158,6 +163,7 @@ const MainText = styled.div`
     line-height: 1.3;
     transition: all 0.7s;
     z-index: 2;
+    overflow: hidden;
   }
   @media ${({ theme }) => theme.md} {
     color: ${({ theme }) => theme.white};
@@ -172,6 +178,7 @@ const MainText = styled.div`
     line-height: 1.3;
     transition: all 0.7s;
     z-index: 2;
+    overflow: hidden;
   }
   @media ${({ theme }) => theme.sm} {
     color: ${({ theme }) => theme.white};
@@ -186,6 +193,7 @@ const MainText = styled.div`
     line-height: 1.3;
     transition: all 0.7s;
     z-index: 2;
+    overflow: hidden;
   }
 `;
 
