@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Range from "../Components/Range";
+
 import pattern from "../Components/assets/img/main/plus-dark-pattern.png";
 import { keyframes } from "styled-components";
 import JJMain from "../Components/assets/img/main/jjMain.png";
@@ -18,7 +18,6 @@ const Home = () => {
         임재준입니다.
       </MainText>
       <MainImg />
-      <Range />
     </Container>
   );
 };
