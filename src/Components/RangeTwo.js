@@ -1,20 +1,20 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { styled, keyframes } from "styled-components";
-
+import css from "styled-components";
 import { CSSTransition } from "react-transition-group";
 
-const Range = () => {
+const RangeTwo = () => {
   const location = useLocation();
   return (
     <CSSTransition
-      in={location.hash === "#sectionOne" || location.hash === ""}
+      in={location.hash === "#sectionTwo" || location.hash === "sectionTwo"}
       timeout={-500}
       classNames="page-transition"
-      unmountOnExit="true"
+      unmountOnExit
       exit
     >
-      <div key={location.hash || `#sectionOne`}>
+      <div key={location.hash || `#sectionTwo`}>
         <Container>
           <RangeStyle>
             <Inner />
@@ -25,7 +25,7 @@ const Range = () => {
   );
 };
 
-export default Range;
+export default RangeTwo;
 const rangeAnimation = keyframes`
 
   0% {
@@ -33,7 +33,7 @@ const rangeAnimation = keyframes`
   }
   100% {
     opacity:1;
-   
+ 
 
   }
 `;
@@ -41,11 +41,32 @@ const rangeInnerAnimation = keyframes`
 
   0% {
     opacity:0;
-    top: 50%;
+    top: 0%;
+    width:3px;
+    background:black !important;
   }
   100% {
     opacity:1;
-    top:0%;
+    top:25%;
+    width:3px;
+    background: black !important;
+   
+
+  }
+`;
+const rangeStyleAnimation = keyframes`
+
+  0% {
+    opacity:0;
+    top: 0%;
+    width:3px;
+    background:black !important;
+  }
+  100% {
+    opacity:1;
+    top:25%;
+    width:3px;
+    background: black !important;
    
 
   }
@@ -55,15 +76,17 @@ const Container = styled.div`
   position: fixed;
   top: 50%;
   left: 40px;
-  z-index: 1;
+  z-index: 2;
   animation-fill-mode: forwards !important;
-  animation: ${rangeAnimation} 0.8s linear;
+  animation: ${rangeAnimation} 1s linear;
 `;
 const RangeStyle = styled.div`
   width: 5px;
   height: 150px;
   border-radius: 3px;
   background: rgba(255, 255, 255, 0.2);
+  animation-fill-mode: forwards !important;
+  animation: ${rangeStyleAnimation} 1s linear;
 `;
 
 const Inner = styled.div`

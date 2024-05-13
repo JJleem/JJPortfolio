@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import Range from "../Components/Range";
 const SectionOne = () => {
   return (
     <Container name="SectionOne">
       <h2>About Section</h2>
       <p>Content of the about section</p>
-      hihi
     </Container>
   );
 };

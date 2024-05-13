@@ -1,11 +1,8 @@
 import React from "react";
-import styled from "styled-components";
-
-import pattern from "../Components/assets/img/main/plus-dark-pattern.png";
-import { keyframes } from "styled-components";
+import Pattern from "../Components/Pattern";
+import Circle from "../Components/Circle";
+import { styled } from "styled-components";
 import JJMain from "../Components/assets/img/main/jjMain.png";
-
-import SectionOne from "./SectionOne";
 
 const Home = () => {
   return (
@@ -17,7 +14,7 @@ const Home = () => {
         <TextHilight>신입 프론트엔드 개발자</TextHilight>로 <br /> 나아가는 중인
         임재준입니다.
       </MainText>
-      <MainImg />
+      {/* <MainImg /> */}
     </Container>
   );
 };
@@ -34,105 +31,6 @@ const Container = styled.div`
     rgba(108, 171, 221, 1) 0%,
     rgba(59, 115, 159, 0.9710259103641457) 100%
   );
-`;
-
-const patternAnimation = keyframes`
-
-  0% {
-    transform:translate(-1000px, 0px);
-  }
-  100% {
-    transform:translate(0px, 0px);
-  }
-`;
-const circleAnimation = keyframes`
-
-  0% {
-    transform:translate(1000px, 0px);
-  }
-  100% {
-    transform:translate(-800px, -900px);
-  }
-`;
-const Pattern = styled.div`
-  position: absolute;
-  width: 250px;
-  height: 200px;
-  left: -3px;
-  top: -3px;
-  background-image: url(${pattern});
-  opacity: 0.5;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  transition: all 0.7s;
-  animation: ${patternAnimation} 1s linear;
-
-  @media ${({ theme }) => theme.lg} {
-    position: absolute;
-    left: -20px;
-    top: -20px;
-    width: 250px;
-    height: 200px;
-    background-image: url(${pattern});
-    opacity: 0.5;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    @media ${({ theme }) => theme.sm} {
-      position: absolute;
-      left: -80px;
-      top: -80px;
-      width: 250px;
-      height: 200px;
-      background-image: url(${pattern});
-      opacity: 0.5;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-    }
-  }
-`;
-
-const Circle = styled.div`
-  position: absolute;
-  width: 1000px;
-  height: 1000px;
-  right: -1000px;
-  bottom: -1100px;
-  border-radius: 100%;
-  background-color: rgba(0, 0, 0, 0.05);
-  animation: ${circleAnimation} 1s linear;
-  animation-delay: 1s;
-  animation-fill-mode: forwards;
-  transition: all 0.7s;
-  @media ${({ theme }) => theme.lg} {
-    position: absolute;
-    width: 800px;
-    height: 800px;
-    right: -1000px;
-    bottom: -1000px;
-    border-radius: 100%;
-    background-color: rgba(0, 0, 0, 0.05);
-    animation: ${circleAnimation} 1s linear;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-  }
-  @media ${({ theme }) => theme.md} {
-    position: absolute;
-    width: 700px;
-    height: 700px;
-    right: -1000px;
-    bottom: -1000px;
-    border-radius: 100%;
-    background-color: rgba(0, 0, 0, 0.05);
-    animation: ${circleAnimation} 1s linear;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-  }
-  @media ${({ theme }) => theme.sm} {
-    display: none;
-  }
 `;
 
 const MainText = styled.div`

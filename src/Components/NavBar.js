@@ -1,13 +1,9 @@
 import React from "react";
-
 import styled from "styled-components";
 import logo from "../Components/assets/img/nav/logo.png";
-
 import Container from "react-bootstrap/Container";
-
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-
 import Offcanvas from "react-bootstrap/Offcanvas";
 
 const NavBar = () => {
@@ -24,9 +20,7 @@ const NavBar = () => {
               <Container fluid>
                 <NavBarStyle.Brand href="#">
                   <LogoContainer />
-                  <TextStyle>
-                    +82 10-6313-6729 / leemjaejun@gamail.com
-                  </TextStyle>
+                  <TextStyle>+82 10-6313-6729 / leemjaejun@gmail.com</TextStyle>
                 </NavBarStyle.Brand>
 
                 <NavBarStyle.Toggle
