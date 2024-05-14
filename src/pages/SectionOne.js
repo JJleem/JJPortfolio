@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import Range from "../Components/Range";
+import PatternTwo from "../Components/PatternTwo";
+import CircleTwo from "../Components/CircleTwo";
 const SectionOne = () => {
   return (
     <Container name="SectionOne">
-      <h2>About Section</h2>
-      <p>Content of the about section</p>
+      <PatternTwo />
+      <CircleTwo />
     </Container>
   );
 };
@@ -14,11 +16,7 @@ export default SectionOne;
 const Container = styled.div`
   width: 100%;
   height: 100vh;
-  background: rgb(108, 171, 221);
-  background: radial-gradient(
-    circle,
-    rgba(108, 171, 221, 1) 0%,
-    rgba(59, 115, 159, 0.9710259103641457) 100%
-  );
+  background: ${({ theme }) => theme.white};
   overflow-y: hidden;
+  position: relative;
 `;

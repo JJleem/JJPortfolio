@@ -52,18 +52,24 @@ const rangeInnerAnimation = keyframes`
 `;
 
 const Container = styled.div`
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 40px;
   z-index: 1;
   animation-fill-mode: forwards !important;
   animation: ${rangeAnimation} 0.8s linear;
+  @media ${({ theme }) => theme.lg} {
+    display: none;
+  }
 `;
 const RangeStyle = styled.div`
   width: 5px;
   height: 150px;
   border-radius: 3px;
   background: rgba(255, 255, 255, 0.2);
+  @media ${({ theme }) => theme.lg} {
+    display: none;
+  }
 `;
 
 const Inner = styled.div`
@@ -74,4 +80,7 @@ const Inner = styled.div`
   background: ${({ theme }) => theme.white};
   border-radius: 3px;
   animation: ${rangeInnerAnimation} 1s linear;
+  @media ${({ theme }) => theme.lg} {
+    display: none;
+  }
 `;

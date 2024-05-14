@@ -8,13 +8,15 @@ import Range from "./Components/Range";
 import { SectionsContainer, Section } from "react-fullpage";
 import styled from "styled-components";
 import RangeTwo from "./Components/RangeTwo";
+import BottomBanner from "./Components/BottomBanner";
 
 function App() {
   let options = {
-    arrowNavigation: true, // use arrow keys
-    delay: 1000, // the scroll animation speed
-    navigation: true, // use dots navigatio
-    scrollBar: false, // use the browser default scrollbar
+    arrowNavigation: true,
+    // delay: 1000,
+    navigation: false,
+    scrollBar: false,
+
     anchors: ["sectionOne", "sectionTwo", "sectionThree", "sectionFour"],
   };
 
@@ -23,6 +25,7 @@ function App() {
       <NavBar />
       <Range />
       <RangeTwo />
+      <BottomBanner />
       <SectionsContainer {...options}>
         <Section>
           <Home />
