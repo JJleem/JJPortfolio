@@ -14,7 +14,7 @@ const Home = () => {
         <TextHilight>신입 프론트엔드 개발자</TextHilight>로 <br /> 나아가는 중인
         임재준입니다.
       </MainText>
-      {/* <MainImg /> */}
+      <MainImg />
     </Container>
   );
 };

@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
-import ReactFullpage from "@fullpage/react-fullpage";
+
 const BottomBanner = () => {
   const location = useLocation();
 
@@ -24,9 +24,7 @@ const BottomBanner = () => {
     >
       <div key={location.hash || (`#sectionOne` && ``)}>
         <Container>
-          <ReactFullpage>
-            <Icon icon={faArrowDown} onClick={moveSection} />
-          </ReactFullpage>
+          <Icon icon={faArrowDown} onClick={moveSection} />
         </Container>
       </div>
     </CSSTransition>
