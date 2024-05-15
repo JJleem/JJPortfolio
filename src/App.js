@@ -5,15 +5,33 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import SectionOne from "./pages/SectionOne";
 import Range from "./Components/Range";
-import { SectionsContainer, Section } from "react-fullpage";
+import { ScrollToTopOnMount, SectionsContainer, Section } from "react-fullpage";
 import styled from "styled-components";
-import RangeTwo from "./Components/RangeTwo";
+
 import BottomBanner from "./Components/BottomBanner";
+import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function App() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.keyCode === 116) {
+        event.preventDefault();
+        window.location = "/";
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   let options = {
     arrowNavigation: true,
-    // delay: 1000,
+    delay: 1000,
     navigation: false,
     scrollBar: false,
 
@@ -24,7 +42,6 @@ function App() {
     <div>
       <NavBar />
       <Range />
-      <RangeTwo />
       <BottomBanner />
       <SectionsContainer {...options}>
         <Section>

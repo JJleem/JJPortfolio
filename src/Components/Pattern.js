@@ -1,22 +1,76 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { styled, keyframes } from "styled-components";
 import pattern from "./assets/img/main/plus-dark-pattern.png";
+import patternTwo from "./assets/img/main/plus-light-pattern.png";
 import { CSSTransition } from "react-transition-group";
 import { useLocation } from "react-router-dom";
 const Pattern = () => {
   const location = useLocation();
+  const [selectedSection, setSelectedSection] = useState("sectionOne");
+  useEffect(() => {
+    const handleHashChange = () => {
+      const section = window.location.hash.substr(1);
+      setSelectedSection(section);
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
+  const renderContent = () => {
+    switch (selectedSection) {
+      case "sectionOne":
+        return (
+          <CSSTransition
+            in={location.hash === "#sectionOne" || location.hash === ""}
+            timeout={500}
+            classNames="page-transition"
+            unmountOnExit
+          >
+            <div key={location.hash || `#sectionOne`}>
+              <PatternStyle />
+            </div>
+          </CSSTransition>
+        );
+
+      case "sectionTwo":
+        return (
+          <CSSTransition
+            in={
+              location.hash === "#sectionTwo" || location.hash === "#sectionTwo"
+            }
+            timeout={500}
+            classNames="page-transition"
+            unmountOnExit
+          >
+            <div key={location.hash || `#sectionTwo`}>
+              <PatternStyleTwo />
+            </div>
+          </CSSTransition>
+        );
+      default:
+        return (
+          <CSSTransition
+            in={location.hash === "#sectionOne" || location.hash === ""}
+            timeout={500}
+            classNames="page-transition"
+            unmountOnExit
+          >
+            <div key={location.hash || `#sectionOne`}>
+              <PatternStyle />
+            </div>
+          </CSSTransition>
+        );
+    }
+  };
 
   return (
-    <CSSTransition
-      in={location.hash === "#sectionOne" || location.hash === ""}
-      timeout={500}
-      classNames="page-transition"
-      unmountOnExit
-    >
-      <div key={location.hash || `#sectionOne`}>
-        <PatternStyle />
-      </div>
-    </CSSTransition>
+    <div key={selectedSection}>
+      <div>{renderContent()}</div>
+    </div>
   );
 };
 
@@ -70,5 +124,56 @@ const PatternStyle = styled.div`
     background-position: center;
     background-size: cover;
     animation: ${patternAnimation} 1s linear;
+  }
+`;
+
+const patternAnimationTwo = keyframes`
+
+  0% {
+    transform:translate(1000px, 0px);
+  }
+  100% {
+    transform:translate(0px, 0px);
+  }
+`;
+const PatternStyleTwo = styled.div`
+  position: absolute;
+  width: 240px;
+  height: 200px;
+  right: -3px;
+  top: -3px;
+  background-image: url(${patternTwo});
+  opacity: 1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.7s;
+  animation: ${patternAnimationTwo} 1s linear;
+
+  @media ${({ theme }) => theme.lg} {
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    width: 240px;
+    height: 200px;
+    background-image: url(${patternTwo});
+    opacity: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: ${patternAnimationTwo} 1s linear;
+  }
+  @media ${({ theme }) => theme.sm} {
+    position: absolute;
+    right: -80px;
+    top: -80px;
+    width: 240px;
+    height: 200px;
+    background-image: url(${patternTwo});
+    opacity: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: ${patternAnimationTwo} 1s linear;
   }
 `;

@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import Range from "../Components/Range";
-import PatternTwo from "../Components/PatternTwo";
-import CircleTwo from "../Components/CircleTwo";
+import Pattern from "../Components/Pattern";
+import Circle from "../Components/Circle";
 const SectionOne = () => {
   return (
     <Container name="SectionOne">
-      <PatternTwo />
-      <CircleTwo />
+      <Pattern />
+      <Circle />
     </Container>
   );
 };

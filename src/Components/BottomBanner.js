@@ -1,33 +1,59 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { styled, keyframes } from "styled-components";
 import { CSSTransition } from "react-transition-group";
 import { useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
 
 const BottomBanner = () => {
   const location = useLocation();
+  const [selectedSection, setSelectedSection] = useState("sectionOne");
 
-  const moveSection = () => {
-    if (window.fullpage_api) {
-      window.fullpage_api.moveTo(0, 0);
+  useEffect(() => {
+    const handleHashChange = () => {
+      const section = window.location.hash.substr(1);
+      setSelectedSection(section);
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
+  const renderContent = () => {
+    switch (selectedSection) {
+      case "sectionOne":
+        return (
+          <CSSTransition
+            in={location.hash === "#sectionOne" || location.hash === ""}
+            timeout={500}
+            classNames="page-transition"
+            unmountOnExit
+          >
+            <div key={location.hash || (`#sectionOne` && ``)}>
+              <Container>
+                <Nav.Link href="#sectionTwo">
+                  <Icon icon={faArrowDown}></Icon>
+                </Nav.Link>
+              </Container>
+            </div>
+          </CSSTransition>
+        );
+
+      case "sectionTwo":
+        return <Container>1</Container>;
+      default:
+        return "";
     }
   };
 
   return (
-    <CSSTransition
-      in={location.hash === "#sectionOne" || location.hash === ""}
-      timeout={500}
-      classNames="page-transition"
-      unmountOnExit
-    >
-      <div key={location.hash || (`#sectionOne` && ``)}>
-        <Container>
-          <Icon icon={faArrowDown} onClick={moveSection} />
-        </Container>
-      </div>
-    </CSSTransition>
+    <div key={selectedSection}>
+      <div>{renderContent()}</div>
+    </div>
   );
 };
 

@@ -42,9 +42,9 @@ const NavBar = () => {
                   </OffcanvasStyle.Header>
                   <Offcanvas.Body>
                     <NavStyle className="justify-content-end flex-grow-1 pe-3">
-                      <NavStyle.Link href="/Home">Home</NavStyle.Link>
-                      <NavStyle.Link href="#action2">Link</NavStyle.Link>
-                      <NavStyle.Link href="#action1">Home</NavStyle.Link>
+                      <NavStyle.Link href="#sectionOne">Home</NavStyle.Link>
+                      <NavStyle.Link href="#sectionTwo">Link</NavStyle.Link>
+                      <NavStyle.Link href="#sectionThree">Home</NavStyle.Link>
                       <NavStyle.Link href="#action2">Link</NavStyle.Link>
                     </NavStyle>
                   </Offcanvas.Body>
@@ -63,7 +63,7 @@ export default NavBar;
 const WholeContainer = styled.div`
   width: 100%;
   position: fixed;
-  z-index: 9999;
+  z-index: 1;
 `;
 const LogoContainer = styled.div`
   background-image: url(${logo});
@@ -79,7 +79,7 @@ const LogoContainer = styled.div`
 `;
 
 const NavBarStyle = styled(Navbar)`
-  z-index: 1;
+  z-index: 0;
   width: 100%;
   background-color: transparent !important;
 `;
@@ -94,7 +94,7 @@ const TextStyle = styled(Navbar)`
   }
 
   @media ${({ theme }) => theme.lg} {
-    z-index: 1;
+    z-index: 0;
     width: 100%;
     background-color: transparent !important;
     font-family: "Inter";
@@ -119,4 +119,5 @@ const OffcanvasStyle = styled(Offcanvas)`
   font-size: 30px;
   border: 1px solid #f00;
   background: #f00 !important;
+  z-index: 9999;
 `;
