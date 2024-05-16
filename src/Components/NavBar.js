@@ -25,28 +25,73 @@ const NavBar = () => {
 
                 <NavBarStyle.Toggle
                   aria-controls={`offcanvasNavbar-expand-${expand}`}
+                  style={{ border: "none" }}
                 />
                 <ContainerNav.Offcanvas
                   id={`offcanvasNavbar-expand-${expand}`}
                   aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
                   placement="end"
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    // alignItems: "center",
+                    // backgroundColor: "#6CABDD",
+                    // background:
+                    //   "radial-gradient(circle,rgba(108, 171, 221, 1) 0%,rgba(59, 115, 159, 0.9710259103641457) 100%)",
+                    boxShadow: "inset 0px 0px 3px 0px #999",
+                  }}
                 >
-                  <OffcanvasStyle.Header closeButton>
+                  <OffcanvasStyle.Header closeButton></OffcanvasStyle.Header>
+                  <Offcanvas.Body style={{ padding: "50px 0px" }}>
                     <OffcanvasStyle.Title
                       id={`offcanvasNavbarLabel-expand-${expand}`}
+                      style={{
+                        display: "flex",
+                        gap: "20px",
+                        marginRight: "20px",
+                        justifyContent: "end",
+                        fontSize: "18px",
+                        fontWeight: "bold",
+                        color: "#286da3",
+                        transition: "all 0.8s",
+                      }}
                     >
-                      <NavStyle.Link href="#action1">
-                        JJ Portfoliod
+                      <Nav
+                        style={{
+                          fontSize: "22px",
+                          fontWeight: "bold",
+                          color: "#000",
+                          lineHeight: 1,
+                          marginRight: "30px",
+                        }}
+                      >
+                        JJ Portfolio
+                      </Nav>
+                      <NavStyle.Link
+                        href="https://github.com/JJleem"
+                        target="_blank"
+                      >
+                        <Git>Github.</Git>
+                      </NavStyle.Link>
+                      <NavStyle.Link
+                        href="https://www.instagram.com/dlawowns04/"
+                        target="_blank"
+                      >
+                        <Insta>Instagram.</Insta>
                       </NavStyle.Link>
                     </OffcanvasStyle.Title>
-                  </OffcanvasStyle.Header>
-                  <Offcanvas.Body>
-                    <NavStyle className="justify-content-end flex-grow-1 pe-3">
-                      <NavStyle.Link href="#sectionOne">Home</NavStyle.Link>
-                      <NavStyle.Link href="#sectionTwo">Link</NavStyle.Link>
-                      <NavStyle.Link href="#sectionThree">Home</NavStyle.Link>
-                      <NavStyle.Link href="#action2">Link</NavStyle.Link>
-                    </NavStyle>
+                    <Overflow>
+                      <NavStyle className="justify-content-end flex-grow-1 pe-3">
+                        <NavStyle.Link href="#sectionOne">Home</NavStyle.Link>
+                        <NavStyle.Link href="#sectionTwo">Link</NavStyle.Link>
+                        <NavStyle.Link href="#sectionThree">Home</NavStyle.Link>
+                        <NavStyle.Link href="#action2">Link</NavStyle.Link>
+                        <NavStyle.Link href="#sectionOne">Home</NavStyle.Link>
+                        <NavStyle.Link href="#sectionTwo">Link</NavStyle.Link>
+                        <NavStyle.Link href="#sectionThree">Home</NavStyle.Link>
+                        <NavStyle.Link href="#action2">Link</NavStyle.Link>
+                      </NavStyle>
+                    </Overflow>
                   </Offcanvas.Body>
                 </ContainerNav.Offcanvas>
               </Container>
@@ -73,7 +118,7 @@ const LogoContainer = styled.div`
   width: 50px;
   height: 50px;
   opacity: 1;
-  border: none !important;
+
   margin-left: 30px;
   /* border: 1px solid #f00 !important; */
 `;
@@ -104,20 +149,31 @@ const TextStyle = styled(Navbar)`
 `;
 const ContainerNav = styled(Navbar)`
   font-family: "Inter";
-  border: 1px solid #f00;
-  background: #f00 !important;
 `;
 const NavStyle = styled(Nav)`
   font-family: "InterBlack";
-  font-size: 30px;
-  border: 1px solid #f00;
-  overflow-y: hidden;
+  font-size: 50px;
+  margin-top: 50px;
+  text-align: center;
+  display: flex;
+  gap: 30px;
+  /* overflow: scroll; */
 `;
-
-const OffcanvasStyle = styled(Offcanvas)`
-  font-family: "InterBlack" !important;
-  font-size: 30px;
+const Overflow = styled.div`
+  margin-top: 50px;
+  width: 100%;
+  height: 50%;
   border: 1px solid #f00;
-  background: #f00 !important;
-  z-index: 9999;
+`;
+const OffcanvasStyle = styled(Offcanvas)``;
+
+const Git = styled.span`
+  &:hover {
+    color: ${({ theme }) => theme.dark};
+  }
+`;
+const Insta = styled.span`
+  &:hover {
+    color: #dd2a7b;
+  }
 `;

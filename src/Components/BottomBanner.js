@@ -25,7 +25,25 @@ const BottomBanner = () => {
 
   const renderContent = () => {
     switch (selectedSection) {
-      case "sectionOne":
+      case "sectionTwo":
+        return (
+          <Container>
+            <Text>02</Text>
+          </Container>
+        );
+      case "sectionThree":
+        return (
+          <Container>
+            <Text>03</Text>
+          </Container>
+        );
+      case "sectionFour":
+        return (
+          <Container>
+            <Text>04</Text>
+          </Container>
+        );
+      default:
         return (
           <CSSTransition
             in={location.hash === "#sectionOne" || location.hash === ""}
@@ -42,11 +60,6 @@ const BottomBanner = () => {
             </div>
           </CSSTransition>
         );
-
-      case "sectionTwo":
-        return <Container>1</Container>;
-      default:
-        return "";
     }
   };
 
@@ -80,15 +93,45 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 1s;
+  transition: all 0.3s;
+  border-radius: 10px 0px 0px 0px;
+
+  @media ${({ theme }) => theme.xs} {
+    position: fixed;
+    bottom: 0px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 80px;
+    height: 80px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    border-radius: 10px 0px 0px 0px;
+  }
 `;
 
 const Icon = styled(FontAwesomeIcon)`
   color: ${({ theme }) => theme.white};
-  font-size: 30px;
+  font-size: 26px;
   z-index: 1;
   cursor: pointer;
   &:hover {
     animation: ${arrowAnimation} 0.3s linear;
   }
+
+  @media ${({ theme }) => theme.xs} {
+    color: ${({ theme }) => theme.white};
+    font-size: 24px;
+    z-index: 1;
+    cursor: pointer;
+    &:hover {
+      animation: ${arrowAnimation} 0.3s linear;
+    }
+  }
+`;
+const Text = styled.span`
+  color: ${({ theme }) => theme.white};
+  font-size: 20px;
 `;

@@ -86,10 +86,10 @@ const circleAnimation = keyframes`
 
 const CircleStyle = styled.div`
   position: absolute;
-  width: 1000px;
-  height: 1000px;
-  right: -1000px;
-  bottom: -1100px;
+  width: 1300px;
+  height: 1300px;
+  right: -1200px;
+  bottom: -1350px;
   border-radius: 100%;
   background-color: rgba(0, 0, 0, 0.05);
   animation: ${circleAnimation} 0.7s linear;
@@ -146,10 +146,11 @@ const circleAnimationTwo = keyframes`
 
 const CircleStyleTwo = styled.div`
   position: absolute;
-  width: 1000px;
-  height: 1000px;
-  left: -1000px;
-  bottom: -1100px;
+  width: 1300px;
+  height: 1300px;
+  opacity: 0.5;
+  left: -1200px;
+  bottom: -1350px;
   border-radius: 100%;
   background-color: rgba(200, 200, 200, 0.2);
   animation: ${circleAnimationTwo} 0.7s linear;

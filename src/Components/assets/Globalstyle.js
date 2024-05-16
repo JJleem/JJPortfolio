@@ -12,7 +12,6 @@ ${reset}
   padding: 0;
   box-sizing: border-box;
 overflow:hidden;
- 
   border: none;
 }
 li {

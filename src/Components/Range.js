@@ -103,7 +103,7 @@ const rangeAnimation = keyframes`
 const rangeInnerAnimation = keyframes`
 
   0% {
-    opacity:0;
+    opacity:1;
     top: 50%;
   }
   100% {
@@ -117,7 +117,7 @@ const rangeInnerAnimation = keyframes`
 const Container = styled.div`
   position: absolute;
   top: 50%;
-  left: 40px;
+  left: 80px;
   z-index: 1;
   animation-fill-mode: forwards !important;
   animation: ${rangeAnimation} 0.8s linear;
@@ -126,7 +126,7 @@ const Container = styled.div`
   }
 `;
 const RangeStyle = styled.div`
-  width: 5px;
+  width: 3px;
   height: 150px;
   border-radius: 3px;
   background: rgba(255, 255, 255, 0.2);
@@ -138,7 +138,7 @@ const RangeStyle = styled.div`
 const Inner = styled.div`
   position: absolute;
   animation-fill-mode: forwards !important;
-  width: 5px;
+  width: 3px;
   height: 30px;
   background: ${({ theme }) => theme.white};
   border-radius: 3px;
@@ -162,7 +162,7 @@ const rangeAnimationTwo = keyframes`
 const rangeInnerAnimationTwo = keyframes`
 
   0% {
-    opacity:0;
+    opacity:1;
     top: 0%;
     width:3px;
   
@@ -179,7 +179,7 @@ const rangeInnerAnimationTwo = keyframes`
 const rangeStyleAnimationTwo = keyframes`
 
   0% {
-    opacity:0;
+    opacity:1;
     top: 0%;
     width:3px;
    
@@ -195,7 +195,7 @@ const rangeStyleAnimationTwo = keyframes`
 const ContainerTwo = styled.div`
   position: fixed;
   top: 50%;
-  left: 40px;
+  left: 80px;
   z-index: 1;
   animation-fill-mode: forwards !important;
   animation: ${rangeAnimationTwo} 1s linear;
