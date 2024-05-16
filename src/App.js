@@ -1,16 +1,18 @@
 import NavBar from "./Components/NavBar";
 import Home from "./pages/Home";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import SectionOne from "./pages/SectionOne";
 import Range from "./Components/Range";
-import { ScrollToTopOnMount, SectionsContainer, Section } from "react-fullpage";
+import { SectionsContainer, Section } from "react-fullpage";
 import styled from "styled-components";
 import Sns from "./Components/Sns";
 import BottomBanner from "./Components/BottomBanner";
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
+import "../css/base.css";
+import "../css/sandbox.css";
+import "../css/embla.css";
 function App() {
   const location = useLocation();
   const navigate = useNavigate();

@@ -90,7 +90,7 @@ const PatternStyle = styled.div`
   width: 250px;
   height: 200px;
   left: -3px;
-  top: -3px;
+  top: 0px;
   background-image: url(${pattern});
   opacity: 0.7;
   background-repeat: no-repeat;
