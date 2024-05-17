@@ -1,43 +1,41 @@
-import NavBar from "./Components/NavBar";
-import Home from "./pages/Home";
-import "bootstrap/dist/css/bootstrap.min.css";
-import SectionOne from "./pages/SectionOne";
-import Range from "./Components/Range";
-import { SectionsContainer, Section } from "react-fullpage";
-import styled from "styled-components";
-import Sns from "./Components/Sns";
-import BottomBanner from "./Components/BottomBanner";
-import { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import NavBar from './Components/NavBar'
+import Home from './pages/Home'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import SectionOne from './pages/SectionOne'
+import SectionTwo from './pages/SectionTwo'
+import Range from './Components/Range'
+import { SectionsContainer, Section } from 'react-fullpage'
+import styled from 'styled-components'
+import Sns from './Components/Sns'
+import BottomBanner from './Components/BottomBanner'
+import { useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 
-import "../css/base.css";
-import "../css/sandbox.css";
-import "../css/embla.css";
 function App() {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const location = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.keyCode === 116) {
-        event.preventDefault();
-        window.location = "/";
+        event.preventDefault()
+        window.location = '/'
       }
-    };
-    window.addEventListener("keydown", handleKeyDown);
+    }
+    window.addEventListener('keydown', handleKeyDown)
     return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
 
   let options = {
     arrowNavigation: true,
-    delay: 1000,
+    delay: 800,
     navigation: false,
     scrollBar: false,
 
-    anchors: ["sectionOne", "sectionTwo", "sectionThree", "sectionFour"],
-  };
+    anchors: ['sectionOne', 'sectionTwo', 'sectionThree', 'sectionFour']
+  }
 
   return (
     <div>
@@ -53,14 +51,14 @@ function App() {
           <SectionOne />
         </Section>
         <Section>
-          <Home />
+          <SectionTwo />
         </Section>
         <Section>
           <SectionOne />
         </Section>
       </SectionsContainer>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

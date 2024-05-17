@@ -1,31 +1,31 @@
-import React, { useState, useEffect } from "react";
-import { styled, keyframes } from "styled-components";
-import pattern from "./assets/img/main/plus-dark-pattern.png";
-import patternTwo from "./assets/img/main/plus-light-pattern.png";
-import { CSSTransition } from "react-transition-group";
-import { useLocation } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
+import { styled, keyframes } from 'styled-components'
+import pattern from './assets/img/main/plus-dark-pattern.png'
+import patternTwo from './assets/img/main/plus-light-pattern.png'
+import { CSSTransition } from 'react-transition-group'
+import { useLocation } from 'react-router-dom'
 const Pattern = () => {
-  const location = useLocation();
-  const [selectedSection, setSelectedSection] = useState("sectionOne");
+  const location = useLocation()
+  const [selectedSection, setSelectedSection] = useState('sectionOne')
   useEffect(() => {
     const handleHashChange = () => {
-      const section = window.location.hash.substr(1);
-      setSelectedSection(section);
-    };
+      const section = window.location.hash.substr(1)
+      setSelectedSection(section)
+    }
 
-    window.addEventListener("hashchange", handleHashChange);
+    window.addEventListener('hashchange', handleHashChange)
 
     return () => {
-      window.removeEventListener("hashchange", handleHashChange);
-    };
-  }, []);
+      window.removeEventListener('hashchange', handleHashChange)
+    }
+  }, [])
 
   const renderContent = () => {
     switch (selectedSection) {
-      case "sectionOne":
+      case 'sectionOne':
         return (
           <CSSTransition
-            in={location.hash === "#sectionOne" || location.hash === ""}
+            in={location.hash === '#sectionOne' || location.hash === ''}
             timeout={500}
             classNames="page-transition"
             unmountOnExit
@@ -34,13 +34,13 @@ const Pattern = () => {
               <PatternStyle />
             </div>
           </CSSTransition>
-        );
+        )
 
-      case "sectionTwo":
+      case 'sectionTwo':
         return (
           <CSSTransition
             in={
-              location.hash === "#sectionTwo" || location.hash === "#sectionTwo"
+              location.hash === '#sectionTwo' || location.hash === '#sectionTwo'
             }
             timeout={500}
             classNames="page-transition"
@@ -50,11 +50,27 @@ const Pattern = () => {
               <PatternStyleTwo />
             </div>
           </CSSTransition>
-        );
+        )
+      case 'sectionThree':
+        return (
+          <CSSTransition
+            in={
+              location.hash === '#sectionThree' ||
+              location.hash === '#sectionThree'
+            }
+            timeout={500}
+            classNames="page-transition"
+            unmountOnExit
+          >
+            <div key={location.hash || `#sectionThree`}>
+              <PatternStyle />
+            </div>
+          </CSSTransition>
+        )
       default:
         return (
           <CSSTransition
-            in={location.hash === "#sectionOne" || location.hash === ""}
+            in={location.hash === '#sectionOne' || location.hash === ''}
             timeout={500}
             classNames="page-transition"
             unmountOnExit
@@ -63,18 +79,18 @@ const Pattern = () => {
               <PatternStyle />
             </div>
           </CSSTransition>
-        );
+        )
     }
-  };
+  }
 
   return (
     <div key={selectedSection}>
       <div>{renderContent()}</div>
     </div>
-  );
-};
+  )
+}
 
-export default Pattern;
+export default Pattern
 
 const patternAnimation = keyframes`
 
@@ -84,7 +100,7 @@ const patternAnimation = keyframes`
   100% {
     transform:translate(0px, 0px);
   }
-`;
+`
 const PatternStyle = styled.div`
   position: absolute;
   width: 250px;
@@ -125,7 +141,7 @@ const PatternStyle = styled.div`
     background-size: cover;
     animation: ${patternAnimation} 1s linear;
   }
-`;
+`
 
 const patternAnimationTwo = keyframes`
 
@@ -135,7 +151,7 @@ const patternAnimationTwo = keyframes`
   100% {
     transform:translate(0px, 0px);
   }
-`;
+`
 const PatternStyleTwo = styled.div`
   position: absolute;
   width: 240px;
@@ -176,4 +192,4 @@ const PatternStyleTwo = styled.div`
     background-size: cover;
     animation: ${patternAnimationTwo} 1s linear;
   }
-`;
+`

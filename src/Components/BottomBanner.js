@@ -1,52 +1,52 @@
-import React, { useState, useEffect } from "react";
-import { styled, keyframes } from "styled-components";
-import { CSSTransition } from "react-transition-group";
-import { useLocation } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
-import Nav from "react-bootstrap/Nav";
+import React, { useState, useEffect } from 'react'
+import { styled, keyframes } from 'styled-components'
+import { CSSTransition } from 'react-transition-group'
+import { useLocation } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons'
+import Nav from 'react-bootstrap/Nav'
 
 const BottomBanner = () => {
-  const location = useLocation();
-  const [selectedSection, setSelectedSection] = useState("sectionOne");
+  const location = useLocation()
+  const [selectedSection, setSelectedSection] = useState('sectionOne')
 
   useEffect(() => {
     const handleHashChange = () => {
-      const section = window.location.hash.substr(1);
-      setSelectedSection(section);
-    };
+      const section = window.location.hash.substr(1)
+      setSelectedSection(section)
+    }
 
-    window.addEventListener("hashchange", handleHashChange);
+    window.addEventListener('hashchange', handleHashChange)
 
     return () => {
-      window.removeEventListener("hashchange", handleHashChange);
-    };
-  }, []);
+      window.addEventListener('hashchange', handleHashChange)
+    }
+  }, [])
 
   const renderContent = () => {
     switch (selectedSection) {
-      case "sectionTwo":
+      case 'sectionTwo':
         return (
           <Container>
             <Text>02</Text>
           </Container>
-        );
-      case "sectionThree":
+        )
+      case 'sectionThree':
         return (
           <Container>
             <Text>03</Text>
           </Container>
-        );
-      case "sectionFour":
+        )
+      case 'sectionFour':
         return (
           <Container>
             <Text>04</Text>
           </Container>
-        );
+        )
       default:
         return (
           <CSSTransition
-            in={location.hash === "#sectionOne" || location.hash === ""}
+            in={location.hash === '#sectionOne' || location.hash === ''}
             timeout={500}
             classNames="page-transition"
             unmountOnExit
@@ -59,18 +59,18 @@ const BottomBanner = () => {
               </Container>
             </div>
           </CSSTransition>
-        );
+        )
     }
-  };
+  }
 
   return (
     <div key={selectedSection}>
       <div>{renderContent()}</div>
     </div>
-  );
-};
+  )
+}
 
-export default BottomBanner;
+export default BottomBanner
 
 const arrowAnimation = keyframes`
 
@@ -80,7 +80,7 @@ const arrowAnimation = keyframes`
   100% {
     transform:translate(0px, 0px);
   }
-`;
+`
 
 const Container = styled.div`
   position: fixed;
@@ -110,7 +110,7 @@ const Container = styled.div`
     transition: all 0.3s;
     border-radius: 10px 0px 0px 0px;
   }
-`;
+`
 
 const Icon = styled(FontAwesomeIcon)`
   color: ${({ theme }) => theme.white};
@@ -130,8 +130,8 @@ const Icon = styled(FontAwesomeIcon)`
       animation: ${arrowAnimation} 0.3s linear;
     }
   }
-`;
+`
 const Text = styled.span`
   color: ${({ theme }) => theme.white};
   font-size: 20px;
-`;
+`

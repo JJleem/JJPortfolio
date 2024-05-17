@@ -4,7 +4,7 @@ import Circle from "../Components/Circle";
 import { styled } from "styled-components";
 import JJMain from "../Components/assets/img/main/jjMain.png";
 import Box from "../Components/Box";
-import Sns from "../Components/Sns";
+
 const Home = () => {
   return (
     <Container>
