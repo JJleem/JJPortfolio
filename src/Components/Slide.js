@@ -8,17 +8,17 @@ const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
     items: 1,
-    slidesToSlide: 1 // optional, default to 1.
+    slidesToSlide: 1
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
     items: 1,
-    slidesToSlide: 1 // optional, default to 1.
+    slidesToSlide: 1
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
     items: 1,
-    slidesToSlide: 1 // optional, default to 1.
+    slidesToSlide: 1
   }
 }
 
@@ -32,7 +32,7 @@ const Slide = () => {
       ssr={true}
       infinite={true}
       autoPlaySpeed={1000}
-      customTransition="all .5"
+      customTransition="all 1s"
       transitionDuration={500}
       containerClass="carousel-container"
       // removeArrowOnDeviceType={['tablet', 'mobile']}
@@ -42,7 +42,7 @@ const Slide = () => {
       customLeftArrow={<CustomLeftArrow />}
     >
       <A>Item 1</A>
-      <div>Item 2</div>
+      <B>Item 2</B>
       <div>Item 3</div>
       <div>Item 4</div>
     </CarouselContainer>
@@ -50,17 +50,23 @@ const Slide = () => {
 }
 
 export default Slide
+
 const CarouselContainer = styled(Carousel)`
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50%;
-  height: 100%;
-  border: 1px solid #f00;
-  z-index: 9999;
+  width: 80%;
+  height: 95%;
 `
 const A = styled.div`
   width: 100%;
-  height: 500px;
+  height: 80vh;
   border: 1px solid #f00;
+  background: #000;
+`
+const B = styled.div`
+  width: 100%;
+  height: 80vh;
+  border: 1px solid #f00;
+  background: #0f0;
 `

@@ -1,30 +1,30 @@
-import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { styled, keyframes } from "styled-components";
-import { CSSTransition } from "react-transition-group";
+import React, { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+import { styled, keyframes } from 'styled-components'
+import { CSSTransition } from 'react-transition-group'
 
 const Range = () => {
-  const location = useLocation();
-  const [selectedSection, setSelectedSection] = useState("sectionOne");
+  const location = useLocation()
+  const [selectedSection, setSelectedSection] = useState('sectionOne')
   useEffect(() => {
     const handleHashChange = () => {
-      const section = window.location.hash.substr(1);
-      setSelectedSection(section);
-    };
+      const section = window.location.hash.substr(1)
+      setSelectedSection(section)
+    }
 
-    window.addEventListener("hashchange", handleHashChange);
+    window.addEventListener('hashchange', handleHashChange)
 
     return () => {
-      window.removeEventListener("hashchange", handleHashChange);
-    };
-  }, []);
+      window.removeEventListener('hashchange', handleHashChange)
+    }
+  }, [])
 
   const renderContent = () => {
     switch (selectedSection) {
-      case "sectionOne":
+      case 'sectionOne':
         return (
           <CSSTransition
-            in={location.hash === "#sectionOne" || location.hash === ""}
+            in={location.hash === '#sectionOne' || location.hash === ''}
             timeout={-500}
             classNames="page-transition"
             unmountOnExit="true"
@@ -38,13 +38,13 @@ const Range = () => {
               </Container>
             </div>
           </CSSTransition>
-        );
+        )
 
-      case "sectionTwo":
+      case 'sectionTwo':
         return (
           <CSSTransition
             in={
-              location.hash === "#sectionTwo" || location.hash === "sectionTwo"
+              location.hash === '#sectionTwo' || location.hash === 'sectionTwo'
             }
             timeout={-500}
             classNames="page-transition"
@@ -59,11 +59,33 @@ const Range = () => {
               </ContainerTwo>
             </div>
           </CSSTransition>
-        );
+        )
+
+      case 'sectionThree':
+        return (
+          <CSSTransition
+            in={
+              location.hash === '#sectionThree' ||
+              location.hash === '#sectionThree'
+            }
+            timeout={-500}
+            classNames="page-transition"
+            unmountOnExit
+            exit
+          >
+            <div key={location.hash || `#sectionThree`}>
+              <ContainerTwo>
+                <RangeStyleTwo>
+                  <InnerThree />
+                </RangeStyleTwo>
+              </ContainerTwo>
+            </div>
+          </CSSTransition>
+        )
       default:
         return (
           <CSSTransition
-            in={location.hash === "#sectionOne" || location.hash === ""}
+            in={location.hash === '#sectionOne' || location.hash === ''}
             timeout={-500}
             classNames="page-transition"
             unmountOnExit="true"
@@ -77,18 +99,18 @@ const Range = () => {
               </Container>
             </div>
           </CSSTransition>
-        );
+        )
     }
-  };
+  }
 
   return (
     <div key={selectedSection}>
       <div>{renderContent()}</div>
     </div>
-  );
-};
+  )
+}
 
-export default Range;
+export default Range
 const rangeAnimation = keyframes`
 
   0% {
@@ -99,7 +121,7 @@ const rangeAnimation = keyframes`
    
 
   }
-`;
+`
 const rangeInnerAnimation = keyframes`
 
   0% {
@@ -112,7 +134,7 @@ const rangeInnerAnimation = keyframes`
    
 
   }
-`;
+`
 
 const Container = styled.div`
   position: absolute;
@@ -124,7 +146,7 @@ const Container = styled.div`
   @media ${({ theme }) => theme.lg} {
     display: none;
   }
-`;
+`
 const RangeStyle = styled.div`
   width: 3px;
   height: 150px;
@@ -133,7 +155,7 @@ const RangeStyle = styled.div`
   @media ${({ theme }) => theme.lg} {
     display: none;
   }
-`;
+`
 
 const Inner = styled.div`
   position: absolute;
@@ -146,7 +168,7 @@ const Inner = styled.div`
   @media ${({ theme }) => theme.lg} {
     display: none;
   }
-`;
+`
 
 const rangeAnimationTwo = keyframes`
 
@@ -158,7 +180,7 @@ const rangeAnimationTwo = keyframes`
  
 
   }
-`;
+`
 const rangeInnerAnimationTwo = keyframes`
 
   0% {
@@ -169,13 +191,13 @@ const rangeInnerAnimationTwo = keyframes`
   }
   100% {
     opacity:1;
-    top:25%;
+    top:30%;
     width:3px;
   
    
 
   }
-`;
+`
 const rangeStyleAnimationTwo = keyframes`
 
   0% {
@@ -190,7 +212,7 @@ const rangeStyleAnimationTwo = keyframes`
     width:3px;
  
   }
-`;
+`
 
 const ContainerTwo = styled.div`
   position: fixed;
@@ -203,7 +225,7 @@ const ContainerTwo = styled.div`
   @media ${({ theme }) => theme.lg} {
     display: none;
   }
-`;
+`
 const RangeStyleTwo = styled.div`
   width: 5px;
   height: 150px;
@@ -213,7 +235,7 @@ const RangeStyleTwo = styled.div`
   @media ${({ theme }) => theme.lg} {
     display: none;
   }
-`;
+`
 
 const InnerTwo = styled.div`
   position: absolute;
@@ -225,4 +247,33 @@ const InnerTwo = styled.div`
   @media ${({ theme }) => theme.lg} {
     display: none;
   }
-`;
+`
+const rangeInnerAnimationThree = keyframes`
+
+  0% {
+    opacity:1;
+    top: 0%;
+    width:3px;
+  
+  }
+  100% {
+    opacity:1;
+    top:50%;
+    width:3px;
+  
+   
+
+  }
+`
+
+const InnerThree = styled.div`
+  position: absolute;
+  animation-fill-mode: forwards !important;
+  width: 5px;
+  height: 30px;
+  background: ${({ theme }) => theme.white};
+  animation: ${rangeInnerAnimationThree} 1s linear;
+  @media ${({ theme }) => theme.lg} {
+    display: none;
+  }
+`

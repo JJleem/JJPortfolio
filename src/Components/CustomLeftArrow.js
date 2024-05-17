@@ -1,21 +1,52 @@
 import React from 'react'
 import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 const CustomLeftArrow = ({ onClick, ...rest }) => {
   const {
     onMove,
     carouselState: { currentSlide, deviceType }
   } = rest
-  // onMove means if dragging or swiping in progress.
-  return <LeftArrow onClick={() => onClick()}>d</LeftArrow>
+  return (
+    <LeftArrow onClick={() => onClick()}>
+      <FontAwesomeIcon icon={faArrowLeft} />
+    </LeftArrow>
+  )
 }
 export default CustomLeftArrow
 const LeftArrow = styled.button`
-  border: 1px solid #f00;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 100px;
+  font-size: 20px;
+  top: 10px;
+  right: 80px;
+  background-color: transparent;
   cursor: pointer;
-  z-index: 9999;
+  transition: all 0.7s;
+  &:hover {
+    color: ${({ theme }) => theme.blue};
+  }
+  @media ${({ theme }) => theme.sm} {
+    position: absolute;
+    font-size: 20px;
+    top: 10;
+    right: 60px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.7s;
+    &:hover {
+      color: ${({ theme }) => theme.blue};
+    }
+  }
+  @media ${({ theme }) => theme.xs} {
+    position: absolute;
+    font-size: 18px;
+    top: 12px;
+    right: 60px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.7s;
+    &:hover {
+      color: ${({ theme }) => theme.blue};
+    }
+  }
 `

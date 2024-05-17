@@ -112,13 +112,13 @@ const Title = styled.div`
     transition: all 0.6s;
   }
   @media ${({ theme }) => theme.sm} {
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'InterBlack';
     line-height: 50px;
     transition: all 0.6s;
   }
   @media ${({ theme }) => theme.xs} {
-    font-size: 26px;
+    font-size: 20px;
     font-family: 'InterBlack';
     line-height: 48px;
     transition: all 0.6s;

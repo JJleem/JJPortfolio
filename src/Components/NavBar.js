@@ -1,12 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import logo from "../Components/assets/img/nav/logo.png";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import Offcanvas from "react-bootstrap/Offcanvas";
-
+import React from 'react'
+import styled from 'styled-components'
+import logo from '../Components/assets/img/nav/logo.png'
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
+import Navbar from 'react-bootstrap/Navbar'
+import Offcanvas from 'react-bootstrap/Offcanvas'
+import { useLocation } from 'react-router-dom'
 const NavBar = () => {
+  const location = useLocation()
   return (
     <div>
       <WholeContainer>
@@ -18,51 +19,51 @@ const NavBar = () => {
               className="bg-body-tertiary mb-3"
             >
               <Container fluid>
-                <NavBarStyle.Brand href="#">
+                <NavBarStyle.Brand href="#sectionOne">
                   <LogoContainer />
                   <TextStyle>+82 10-6313-6729 / leemjaejun@gmail.com</TextStyle>
                 </NavBarStyle.Brand>
 
                 <NavBarStyle.Toggle
                   aria-controls={`offcanvasNavbar-expand-${expand}`}
-                  style={{ border: "none" }}
+                  style={{ border: 'none' }}
                 />
                 <ContainerNav.Offcanvas
                   id={`offcanvasNavbar-expand-${expand}`}
                   aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
                   placement="end"
                   style={{
-                    display: "flex",
-                    justifyContent: "center",
+                    display: 'flex',
+                    justifyContent: 'center',
                     // alignItems: "center",
                     // backgroundColor: "#6CABDD",
                     // background:
                     //   "radial-gradient(circle,rgba(108, 171, 221, 1) 0%,rgba(59, 115, 159, 0.9710259103641457) 100%)",
-                    boxShadow: "inset 0px 0px 3px 0px #999",
+                    boxShadow: 'inset 0px 0px 3px 0px #999'
                   }}
                 >
                   <OffcanvasStyle.Header closeButton></OffcanvasStyle.Header>
-                  <Offcanvas.Body style={{ padding: "50px 0px" }}>
+                  <Offcanvas.Body style={{ padding: '50px 0px' }}>
                     <OffcanvasStyle.Title
                       id={`offcanvasNavbarLabel-expand-${expand}`}
                       style={{
-                        display: "flex",
-                        gap: "20px",
-                        marginRight: "20px",
-                        justifyContent: "end",
-                        fontSize: "18px",
-                        fontWeight: "bold",
-                        color: "#286da3",
-                        transition: "all 0.8s",
+                        display: 'flex',
+                        gap: '20px',
+                        marginRight: '20px',
+                        justifyContent: 'end',
+                        fontSize: '18px',
+                        fontWeight: 'bold',
+                        color: '#286da3',
+                        transition: 'all 0.8s'
                       }}
                     >
                       <Nav
                         style={{
-                          fontSize: "22px",
-                          fontWeight: "bold",
-                          color: "#000",
+                          fontSize: '22px',
+                          fontWeight: 'bold',
+                          color: '#000',
                           lineHeight: 1,
-                          marginRight: "30px",
+                          marginRight: '30px'
                         }}
                       >
                         JJ Portfolio
@@ -100,16 +101,16 @@ const NavBar = () => {
         </>
       </WholeContainer>
     </div>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar
 
 const WholeContainer = styled.div`
   width: 100%;
   position: fixed;
   z-index: 1;
-`;
+`
 const LogoContainer = styled.div`
   background-image: url(${logo});
   background-repeat: no-repeat;
@@ -121,15 +122,15 @@ const LogoContainer = styled.div`
 
   margin-left: 30px;
   /* border: 1px solid #f00 !important; */
-`;
+`
 
 const NavBarStyle = styled(Navbar)`
   z-index: 0;
   width: 100%;
   background-color: transparent !important;
-`;
+`
 const TextStyle = styled(Navbar)`
-  font-family: "Inter";
+  font-family: 'Inter';
   font-size: 12px;
   color: ${({ theme }) => theme.lightgray};
   margin-left: 30px;
@@ -142,38 +143,38 @@ const TextStyle = styled(Navbar)`
     z-index: 0;
     width: 100%;
     background-color: transparent !important;
-    font-family: "Inter";
+    font-family: 'Inter';
     font-size: 10px;
     color: ${({ theme }) => theme.lightgray};
   }
-`;
+`
 const ContainerNav = styled(Navbar)`
-  font-family: "Inter";
-`;
+  font-family: 'Inter';
+`
 const NavStyle = styled(Nav)`
-  font-family: "InterBlack";
+  font-family: 'InterBlack';
   font-size: 50px;
   margin-top: 50px;
   text-align: center;
   display: flex;
   gap: 30px;
   /* overflow: scroll; */
-`;
+`
 const Overflow = styled.div`
   margin-top: 50px;
   width: 100%;
   height: 50%;
   border: 1px solid #f00;
-`;
-const OffcanvasStyle = styled(Offcanvas)``;
+`
+const OffcanvasStyle = styled(Offcanvas)``
 
 const Git = styled.span`
   &:hover {
     color: ${({ theme }) => theme.dark};
   }
-`;
+`
 const Insta = styled.span`
   &:hover {
     color: #dd2a7b;
   }
-`;
+`
