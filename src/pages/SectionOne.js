@@ -5,13 +5,23 @@ import Circle from '../Components/Circle'
 import typescript from '../Components/assets/img/one/Typescript.png'
 import LogoTitle from '../Components/LogoTitle'
 import Slide from '../Components/Slide'
+import mockup from '../Components/assets/img/slideOne/cham_stand04.jpg'
+import react from '../Components/assets/img/one/React.png'
 const SectionOne = () => {
   return (
     <Container name="SectionOne">
       <Pattern />
       <Circle />
-      <LogoTitle img={`${typescript}`} text={'Typescript Example'} />
-      <Slide />
+      <LogoTitle img={`${typescript}`} text={'Typescript '} />
+      <Slide
+        imgSrc={`${mockup}`}
+        title={'비트코인'}
+        logoOne={`${typescript}`}
+        logoTwo={`${react}`}
+        desc={
+          '안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.'
+        }
+      />
     </Container>
   )
 }

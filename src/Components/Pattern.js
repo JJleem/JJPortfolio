@@ -116,30 +116,12 @@ const PatternStyle = styled.div`
   animation: ${patternAnimation} 1s linear;
 
   @media ${({ theme }) => theme.lg} {
-    position: absolute;
     left: -20px;
     top: -20px;
-    width: 250px;
-    height: 200px;
-    background-image: url(${pattern});
-    opacity: 0.7;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    animation: ${patternAnimation} 1s linear;
   }
   @media ${({ theme }) => theme.sm} {
-    position: absolute;
     left: -80px;
     top: -80px;
-    width: 250px;
-    height: 200px;
-    background-image: url(${pattern});
-    opacity: 0.7;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    animation: ${patternAnimation} 1s linear;
   }
 `
 
@@ -167,29 +149,11 @@ const PatternStyleTwo = styled.div`
   animation: ${patternAnimationTwo} 1s linear;
 
   @media ${({ theme }) => theme.lg} {
-    position: absolute;
     right: -20px;
     top: -20px;
-    width: 240px;
-    height: 200px;
-    background-image: url(${patternTwo});
-    opacity: 1;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    animation: ${patternAnimationTwo} 1s linear;
   }
   @media ${({ theme }) => theme.sm} {
-    position: absolute;
     right: -80px;
     top: -80px;
-    width: 240px;
-    height: 200px;
-    background-image: url(${patternTwo});
-    opacity: 1;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    animation: ${patternAnimationTwo} 1s linear;
   }
 `

@@ -97,18 +97,8 @@ const Container = styled.div`
   border-radius: 10px 0px 0px 0px;
 
   @media ${({ theme }) => theme.xs} {
-    position: fixed;
-    bottom: 0px;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.4);
     width: 80px;
     height: 80px;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s;
-    border-radius: 10px 0px 0px 0px;
   }
 `
 
@@ -122,13 +112,7 @@ const Icon = styled(FontAwesomeIcon)`
   }
 
   @media ${({ theme }) => theme.xs} {
-    color: ${({ theme }) => theme.white};
     font-size: 24px;
-    z-index: 1;
-    cursor: pointer;
-    &:hover {
-      animation: ${arrowAnimation} 0.3s linear;
-    }
   }
 `
 const Text = styled.span`

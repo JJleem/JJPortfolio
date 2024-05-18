@@ -26,27 +26,11 @@ const LeftArrow = styled.button`
     color: ${({ theme }) => theme.blue};
   }
   @media ${({ theme }) => theme.sm} {
-    position: absolute;
-    font-size: 20px;
-    top: 10;
     right: 60px;
-    background-color: transparent;
-    cursor: pointer;
-    transition: all 0.7s;
-    &:hover {
-      color: ${({ theme }) => theme.blue};
-    }
   }
   @media ${({ theme }) => theme.xs} {
-    position: absolute;
     font-size: 18px;
     top: 12px;
-    right: 60px;
-    background-color: transparent;
-    cursor: pointer;
-    transition: all 0.7s;
-    &:hover {
-      color: ${({ theme }) => theme.blue};
-    }
+    right: 50px;
   }
 `

@@ -119,7 +119,6 @@ const CircleStyle = styled.div`
     right: -1000px;
     bottom: -1000px;
     border-radius: 100%;
-    background-color: rgba(0, 0, 0, 0.05);
     animation: ${circleAnimation} 1s linear;
     animation-delay: 1s;
     animation-fill-mode: forwards;

@@ -41,7 +41,7 @@ const TitleAnimation = keyframes`
 const Container = styled.div`
   position: absolute;
   top: 12%;
-  left: 15%;
+  left: 10%;
   display: flex;
   gap: 10px;
   align-items: center;
@@ -53,105 +53,48 @@ const Container = styled.div`
     position: absolute;
     top: 12%;
     left: 10%;
-    display: flex;
     gap: 10px;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.6s;
-    animation: ${TitleAnimation} 1.5s linear;
-  }
-  @media ${({ theme }) => theme.md} {
-    position: absolute;
-    top: 12%;
-    left: 8%;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.6s;
-    animation: ${TitleAnimation} 1.5s linear;
-  }
-  @media ${({ theme }) => theme.sm} {
-    position: absolute;
-    top: 12%;
-    left: 3%;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.6s;
     animation: ${TitleAnimation} 1.5s linear;
   }
   @media ${({ theme }) => theme.xs} {
-    position: absolute;
-    top: 12%;
-    left: 3%;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.6s;
-    animation: ${TitleAnimation} 1.5s linear;
+    gap: 8px;
   }
 `
 const Title = styled.div`
   font-size: 46px;
-  font-family: 'InterBlack';
-  height: 50px;
+  font-family: 'NotoBold';
+  line-height: 60px;
   transition: all 0.6s;
+  color: ${({ theme }) => theme.graydark};
   @media ${({ theme }) => theme.lg} {
     font-size: 40px;
-    font-family: 'InterBlack';
     line-height: 50px;
-    transition: all 0.6s;
   }
   @media ${({ theme }) => theme.md} {
     font-size: 35px;
-    font-family: 'InterBlack';
     line-height: 46px;
-    transition: all 0.6s;
   }
   @media ${({ theme }) => theme.sm} {
     font-size: 25px;
-    font-family: 'InterBlack';
     line-height: 50px;
-    transition: all 0.6s;
   }
   @media ${({ theme }) => theme.xs} {
-    font-size: 20px;
-    font-family: 'InterBlack';
+    font-size: 18px;
     line-height: 48px;
-    transition: all 0.6s;
   }
 `
 const Img = styled.img`
   width: 55px;
   height: auto;
-  /* object-fit: cover; */
-
   transition: all 0.6s;
-  @media ${({ theme }) => theme.lg} {
-    width: 55px;
-    height: auto;
-
-    transition: all 0.6s;
-  }
   @media ${({ theme }) => theme.md} {
     width: 35px;
-    height: auto;
     object-fit: cover;
-    transition: all 0.6s;
   }
   @media ${({ theme }) => theme.sm} {
     width: 33px;
-    height: auto;
-    object-fit: cover;
-    transition: all 0.6s;
   }
   @media ${({ theme }) => theme.xs} {
     width: 26px;
-    height: auto;
-    object-fit: cover;
-    transition: all 0.6s;
   }
 `

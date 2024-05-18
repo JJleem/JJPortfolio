@@ -5,12 +5,14 @@ import Circle from '../Components/Circle'
 import react from '../Components/assets/img/one/React.png'
 import LogoTitle from '../Components/LogoTitle'
 import Slide from '../Components/Slide'
+import SlideSection from '../Components/slideSection/SlideSection'
 const SectionTwo = () => {
   return (
     <Container name="SectionOne">
       <Pattern />
       <Circle />
-      <LogoTitle img={`${react}`} text={'React Example'} />
+      <LogoTitle img={`${react}`} text={'React'} />
+      <Slide />
     </Container>
   )
 }

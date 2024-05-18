@@ -119,9 +119,7 @@ const LogoContainer = styled.div`
   width: 50px;
   height: 50px;
   opacity: 1;
-
   margin-left: 30px;
-  /* border: 1px solid #f00 !important; */
 `
 
 const NavBarStyle = styled(Navbar)`
@@ -135,17 +133,11 @@ const TextStyle = styled(Navbar)`
   color: ${({ theme }) => theme.lightgray};
   margin-left: 30px;
   transition: all 0.7s;
+  @media ${({ theme }) => theme.lg} {
+    font-size: 10px;
+  }
   @media ${({ theme }) => theme.sm} {
     display: none;
-  }
-
-  @media ${({ theme }) => theme.lg} {
-    z-index: 0;
-    width: 100%;
-    background-color: transparent !important;
-    font-family: 'Inter';
-    font-size: 10px;
-    color: ${({ theme }) => theme.lightgray};
   }
 `
 const ContainerNav = styled(Navbar)`
@@ -158,7 +150,6 @@ const NavStyle = styled(Nav)`
   text-align: center;
   display: flex;
   gap: 30px;
-  /* overflow: scroll; */
 `
 const Overflow = styled.div`
   margin-top: 50px;

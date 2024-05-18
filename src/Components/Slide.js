@@ -4,6 +4,10 @@ import 'react-multi-carousel/lib/styles.css'
 import styled from 'styled-components'
 import CustomRightArrow from './CustomRightArrow'
 import CustomLeftArrow from './CustomLeftArrow'
+import SlideSection from './slideSection/SlideSection'
+import mockup from '../Components/assets/img/slideOne/cham_stand04.jpg'
+import react from '../Components/assets/img/one/React.png'
+import typescript from '../Components/assets/img/one/Typescript.png'
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -22,7 +26,7 @@ const responsive = {
   }
 }
 
-const Slide = () => {
+const Slide = (props) => {
   return (
     <CarouselContainer
       swipeable={true}
@@ -41,10 +45,20 @@ const Slide = () => {
       customRightArrow={<CustomRightArrow />}
       customLeftArrow={<CustomLeftArrow />}
     >
-      <A>Item 1</A>
-      <B>Item 2</B>
-      <div>Item 3</div>
-      <div>Item 4</div>
+      <SlideSectionContainer>
+        <SlideSection
+          imgSrc={props.imgSrc}
+          title={props.title}
+          logoOne={props.logoOne}
+          logoTwo={props.logoTwo}
+          desc={props.desc}
+        />
+      </SlideSectionContainer>
+      <SlideSectionContainer>
+        <SlideSection imgSrc={`${mockup}`} />
+      </SlideSectionContainer>
+      <SlideSectionContainer></SlideSectionContainer>
+      <SlideSectionContainer></SlideSectionContainer>
     </CarouselContainer>
   )
 }
@@ -58,15 +72,8 @@ const CarouselContainer = styled(Carousel)`
   width: 80%;
   height: 95%;
 `
-const A = styled.div`
+const SlideSectionContainer = styled.div`
   width: 100%;
-  height: 80vh;
-  border: 1px solid #f00;
-  background: #000;
-`
-const B = styled.div`
-  width: 100%;
-  height: 80vh;
-  border: 1px solid #f00;
-  background: #0f0;
+  height: 75vh;
+  margin: 0px 0px 0px 1px;
 `

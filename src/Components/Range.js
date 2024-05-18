@@ -74,11 +74,11 @@ const Range = () => {
             exit
           >
             <div key={location.hash || `#sectionThree`}>
-              <ContainerTwo>
-                <RangeStyleTwo>
+              <ContainerThree>
+                <RangeStyleThree>
                   <InnerThree />
-                </RangeStyleTwo>
-              </ContainerTwo>
+                </RangeStyleThree>
+              </ContainerThree>
             </div>
           </CSSTransition>
         )
@@ -139,7 +139,7 @@ const rangeInnerAnimation = keyframes`
 const Container = styled.div`
   position: absolute;
   top: 50%;
-  left: 80px;
+  left: 50px;
   z-index: 1;
   animation-fill-mode: forwards !important;
   animation: ${rangeAnimation} 0.8s linear;
@@ -217,11 +217,11 @@ const rangeStyleAnimationTwo = keyframes`
 const ContainerTwo = styled.div`
   position: fixed;
   top: 50%;
-  left: 80px;
+  left: 50px;
   z-index: 1;
   animation-fill-mode: forwards !important;
   animation: ${rangeAnimationTwo} 1s linear;
-  box-shadow: 0px 0px 1px black;
+  box-shadow: 0px 0px 1px rgba(45, 121, 199, 1);
   @media ${({ theme }) => theme.lg} {
     display: none;
   }
@@ -229,7 +229,7 @@ const ContainerTwo = styled.div`
 const RangeStyleTwo = styled.div`
   width: 5px;
   height: 150px;
-  background: #000;
+  background-color: rgba(45, 121, 199, 1);
   animation-fill-mode: forwards !important;
   animation: ${rangeStyleAnimationTwo} 1s linear;
   @media ${({ theme }) => theme.lg} {
@@ -273,6 +273,31 @@ const InnerThree = styled.div`
   height: 30px;
   background: ${({ theme }) => theme.white};
   animation: ${rangeInnerAnimationThree} 1s linear;
+  border: 1px solid rgba(182, 234, 248, 0.5);
+
+  @media ${({ theme }) => theme.lg} {
+    display: none;
+  }
+`
+const ContainerThree = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50px;
+  z-index: 1;
+  animation-fill-mode: forwards !important;
+  animation: ${rangeAnimationTwo} 1s linear;
+
+  @media ${({ theme }) => theme.lg} {
+    display: none;
+  }
+`
+
+const RangeStyleThree = styled.div`
+  width: 5px;
+  height: 150px;
+  background-color: rgba(182, 234, 248);
+  animation-fill-mode: forwards !important;
+  animation: ${rangeStyleAnimationTwo} 1s linear;
   @media ${({ theme }) => theme.lg} {
     display: none;
   }
