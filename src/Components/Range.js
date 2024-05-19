@@ -82,6 +82,48 @@ const Range = () => {
             </div>
           </CSSTransition>
         )
+      case 'sectionFour':
+        return (
+          <CSSTransition
+            in={
+              location.hash === '#sectionFour' ||
+              location.hash === '#sectionFour'
+            }
+            timeout={-500}
+            classNames="page-transition"
+            unmountOnExit
+            exit
+          >
+            <div key={location.hash || `#sectionFour`}>
+              <ContainerFour>
+                <RangeStyleFour>
+                  <InnerFour />
+                </RangeStyleFour>
+              </ContainerFour>
+            </div>
+          </CSSTransition>
+        )
+      case 'sectionFive':
+        return (
+          <CSSTransition
+            in={
+              location.hash === '#sectionFive' ||
+              location.hash === '#sectionFive'
+            }
+            timeout={-500}
+            classNames="page-transition"
+            unmountOnExit
+            exit
+          >
+            <div key={location.hash || `#sectionFive`}>
+              <ContainerFive>
+                <RangeStyleFive>
+                  <InnerFive />
+                </RangeStyleFive>
+              </ContainerFive>
+            </div>
+          </CSSTransition>
+        )
       default:
         return (
           <CSSTransition
@@ -191,7 +233,7 @@ const rangeInnerAnimationTwo = keyframes`
   }
   100% {
     opacity:1;
-    top:30%;
+    top:20%;
     width:3px;
   
    
@@ -258,7 +300,7 @@ const rangeInnerAnimationThree = keyframes`
   }
   100% {
     opacity:1;
-    top:50%;
+    top:30%;
     width:3px;
   
    
@@ -296,6 +338,113 @@ const RangeStyleThree = styled.div`
   width: 5px;
   height: 150px;
   background-color: rgba(182, 234, 248);
+  animation-fill-mode: forwards !important;
+  animation: ${rangeStyleAnimationTwo} 1s linear;
+  @media ${({ theme }) => theme.lg} {
+    display: none;
+  }
+`
+const rangeInnerAnimationFour = keyframes`
+
+  0% {
+    opacity:1;
+    top: 0%;
+    width:3px;
+  
+  }
+  100% {
+    opacity:1;
+    top:40%;
+    width:3px;
+  
+   
+
+  }
+`
+const InnerFour = styled.div`
+  position: absolute;
+  animation-fill-mode: forwards !important;
+  width: 5px;
+  height: 30px;
+  background: ${({ theme }) => theme.white};
+  animation: ${rangeInnerAnimationFour} 1s linear;
+
+  @media ${({ theme }) => theme.lg} {
+    display: none;
+  }
+`
+const ContainerFour = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50px;
+  z-index: 1;
+  animation-fill-mode: forwards !important;
+  animation: ${rangeAnimationTwo} 1s linear;
+
+  @media ${({ theme }) => theme.lg} {
+    display: none;
+  }
+`
+
+const RangeStyleFour = styled.div`
+  width: 5px;
+  height: 150px;
+  background-color: rgb(247, 224, 24, 1);
+  animation-fill-mode: forwards !important;
+  animation: ${rangeStyleAnimationTwo} 1s linear;
+  @media ${({ theme }) => theme.lg} {
+    display: none;
+  }
+`
+
+const rangeInnerAnimationFive = keyframes`
+
+  0% {
+    opacity:1;
+    top: 0%;
+    width:3px;
+  }
+  50%{
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+    top:100%;
+    width:3px;
+  
+   
+
+  }
+`
+const InnerFive = styled.div`
+  position: absolute;
+  animation-fill-mode: forwards !important;
+  width: 5px;
+  height: 30px;
+  background: ${({ theme }) => theme.white};
+  animation: ${rangeInnerAnimationFive} 1s linear;
+
+  @media ${({ theme }) => theme.lg} {
+    display: none;
+  }
+`
+const ContainerFive = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50px;
+  z-index: 1;
+  animation-fill-mode: forwards !important;
+  animation: ${rangeAnimationTwo} 1s linear;
+
+  @media ${({ theme }) => theme.lg} {
+    display: none;
+  }
+`
+
+const RangeStyleFive = styled.div`
+  width: 5px;
+  height: 150px;
+  background-color: rgb(0, 0, 0, 1);
   animation-fill-mode: forwards !important;
   animation: ${rangeStyleAnimationTwo} 1s linear;
   @media ${({ theme }) => theme.lg} {

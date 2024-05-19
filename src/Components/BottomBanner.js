@@ -43,6 +43,12 @@ const BottomBanner = () => {
             <Text>04</Text>
           </Container>
         )
+      case 'sectionFive':
+        return (
+          <Container>
+            <Text>05</Text>
+          </Container>
+        )
       default:
         return (
           <CSSTransition

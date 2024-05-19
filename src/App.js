@@ -3,6 +3,8 @@ import Home from './pages/Home'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import SectionOne from './pages/SectionOne'
 import SectionTwo from './pages/SectionTwo'
+import SectionThree from './pages/SectionThree'
+import SectionFour from './pages/SectionFour'
 import Range from './Components/Range'
 import { SectionsContainer, Section } from 'react-fullpage'
 import styled from 'styled-components'
@@ -34,7 +36,13 @@ function App() {
     navigation: false,
     scrollBar: false,
 
-    anchors: ['sectionOne', 'sectionTwo', 'sectionThree', 'sectionFour']
+    anchors: [
+      'sectionOne',
+      'sectionTwo',
+      'sectionThree',
+      'sectionFour',
+      `sectionFive`
+    ]
   }
 
   return (
@@ -54,7 +62,10 @@ function App() {
           <SectionTwo />
         </Section>
         <Section>
-          <SectionOne />
+          <SectionThree />
+        </Section>
+        <Section>
+          <SectionFour />
         </Section>
       </SectionsContainer>
     </div>

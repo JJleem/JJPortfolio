@@ -12,9 +12,9 @@ const Home = () => {
       <Circle />
 
       <BoxContainer>
-        <Box text={'React'} />
-        <Box end={8} text={'JS'} />
-        <Box end={5} text={'TS'} />
+        <Box end={4} text={'TS'} />
+        <Box end={5} text={'React'} />
+        <Box end={5} text={'JS'} />
       </BoxContainer>
 
       <MainText>
@@ -36,8 +36,8 @@ const Container = styled.div`
   background: rgb(108, 171, 221);
   background: radial-gradient(
     circle,
-    rgba(108, 171, 221, 1) 0%,
-    rgba(59, 115, 159, 0.9710259103641457) 100%
+    rgba(70, 171, 230, 1) 0%,
+    rgba(49, 115, 200, 0.9710259103641457) 100%
   );
 `
 

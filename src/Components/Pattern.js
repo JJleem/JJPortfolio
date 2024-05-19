@@ -67,6 +67,22 @@ const Pattern = () => {
             </div>
           </CSSTransition>
         )
+      case 'sectionFour':
+        return (
+          <CSSTransition
+            in={
+              location.hash === '#sectionFour' ||
+              location.hash === '#sectionFour'
+            }
+            timeout={500}
+            classNames="page-transition"
+            unmountOnExit
+          >
+            <div key={location.hash || `#sectionFour`}>
+              <PatternStyleTwo />
+            </div>
+          </CSSTransition>
+        )
       default:
         return (
           <CSSTransition

@@ -51,7 +51,11 @@ const Slide = (props) => {
           title={props.title}
           logoOne={props.logoOne}
           logoTwo={props.logoTwo}
+          logoThree={props.logoThree}
           desc={props.desc}
+          hash={props.hash}
+          Link={props.Link}
+          LinkHash={props.LinkHash}
         />
       </SlideSectionContainer>
       <SlideSectionContainer>

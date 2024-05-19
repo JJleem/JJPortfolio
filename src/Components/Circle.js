@@ -65,6 +65,22 @@ const Circle = () => {
             </div>
           </CSSTransition>
         )
+      case 'sectionFour':
+        return (
+          <CSSTransition
+            in={
+              location.hash === '#sectionFour' ||
+              location.hash === '#sectionFour'
+            }
+            timeout={500}
+            classNames="page-transition"
+            unmountOnExit
+          >
+            <div key={location.hash || `#sectionFour`}>
+              <CircleStyleFour />
+            </div>
+          </CSSTransition>
+        )
       default:
         return (
           <CSSTransition
@@ -257,5 +273,38 @@ const CircleStyleThree = styled.div`
     animation: ${circleAnimation} 1s linear;
     animation-delay: 1s;
     animation-fill-mode: forwards;
+  }
+`
+const CircleStyleFour = styled.div`
+  position: absolute;
+  width: 1300px;
+  height: 1300px;
+  opacity: 0.5;
+  left: -1200px;
+  bottom: -1350px;
+  border-radius: 100%;
+  background-color: rgb(247, 224, 24, 0.4);
+  animation: ${circleAnimationTwo} 0.7s linear;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  transition: all 0.7s;
+  @media ${({ theme }) => theme.lg} {
+    width: 800px;
+    height: 800px;
+    left: -1000px;
+    bottom: -1000px;
+  }
+  @media ${({ theme }) => theme.md} {
+    width: 700px;
+    height: 700px;
+    left: -1000px;
+    bottom: -1000px;
+    border-radius: 100%;
+  }
+  @media ${({ theme }) => theme.sm} {
+    width: 700px;
+    height: 700px;
+    left: -1200px;
+    bottom: -1100px;
   }
 `
