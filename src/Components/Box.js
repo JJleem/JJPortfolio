@@ -50,6 +50,11 @@ const Container = styled.div`
     gap: 2px;
     padding: 6px;
   }
+  @media ${({ theme }) => theme.xs} {
+    width: 95px;
+    gap: 2px;
+    padding: 6px;
+  }
 `
 const Count = styled.div`
   font-size: 30px;

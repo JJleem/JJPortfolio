@@ -5,9 +5,7 @@ import styled from 'styled-components'
 import CustomRightArrow from './CustomRightArrow'
 import CustomLeftArrow from './CustomLeftArrow'
 import SlideSection from './slideSection/SlideSection'
-import mockup from '../Components/assets/img/slideOne/cham_stand04.jpg'
-import react from '../Components/assets/img/one/React.png'
-import typescript from '../Components/assets/img/one/Typescript.png'
+
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -53,15 +51,37 @@ const Slide = (props) => {
           logoTwo={props.logoTwo}
           logoThree={props.logoThree}
           desc={props.desc}
+          descTwo={props.desc12}
           hash={props.hash}
           Link={props.Link}
-          LinkHash={props.LinkHash}
         />
       </SlideSectionContainer>
       <SlideSectionContainer>
-        <SlideSection imgSrc={`${mockup}`} />
+        <SlideSection
+          imgSrc={props.imgSrc2}
+          title={props.title2}
+          logoOne={props.logoOne2}
+          logoTwo={props.logoTwo2}
+          logoThree={props.logoThree2}
+          desc={props.desc2}
+          descTwo={props.desc22}
+          descThree={props.desc23}
+          hash={props.hash}
+          Link={props.Link2}
+        />
       </SlideSectionContainer>
-      <SlideSectionContainer></SlideSectionContainer>
+      <SlideSectionContainer>
+        <SlideSection
+          imgSrc={props.imgSrc3}
+          title={props.title3}
+          logoOne={props.logoOne3}
+          logoTwo={props.logoTwo3}
+          logoThree={props.logoThree3}
+          desc={props.desc3}
+          hash={props.hash}
+          Link={props.Link3}
+        />
+      </SlideSectionContainer>
       <SlideSectionContainer></SlideSectionContainer>
     </CarouselContainer>
   )

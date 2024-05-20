@@ -56,6 +56,8 @@ const SlideSection = (props) => {
         </HeaderContainer>
         <TextSection>
           <Desc>{props.desc}</Desc>
+          <Desc>{props.descTwo}</Desc>
+          <Desc>{props.descThree}</Desc>
         </TextSection>
       </TextContainer>
     </Container>
@@ -76,6 +78,9 @@ const Container = styled.div`
     flex-direction: column;
     gap: 15px;
   }
+  @media ${({ theme }) => theme.xs} {
+    padding-right: 3px;
+  }
 `
 const ImgContainer = styled.div`
   width: 50%;
@@ -89,6 +94,9 @@ const ImgContainer = styled.div`
   }
   @media ${({ theme }) => theme.md} {
     height: 60%;
+  }
+  @media ${({ theme }) => theme.xs} {
+    height: 50%;
   }
 `
 const LinkStyle = styled(Link)`
@@ -114,7 +122,7 @@ const FontAwesomeIconStyle = styled(FontAwesomeIcon)`
   left: 10px;
   top: 2%;
   font-size: 30px;
-  color: ${({ theme }) => theme.white};
+  color: ${({ theme }) => theme.gray};
   transition: all 0.7s;
   &:hover {
     transform: scale(1.4);
@@ -128,17 +136,21 @@ const Img = styled.img`
   height: 100%;
   object-fit: cover;
   object-position: top;
-  transition: all 1s;
+  transition: all 4s;
   &:hover {
     object-position: bottom;
   }
   &:active {
-    object-position: initial;
+    object-position: bottom;
   }
 `
 const TextContainer = styled.div`
   width: 50%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 5px;
   @media ${({ theme }) => theme.lg} {
     width: 98%;
   }
@@ -160,14 +172,21 @@ const HeaderContainer = styled.div`
 
     padding: 15px 10px 25px 10px;
   }
+  @media ${({ theme }) => theme.xs} {
+    gap: 7px;
+    height: 15%;
+    padding: 5px 0px 15px 0px;
+  }
 `
 const HeaderLogoContainer = styled.div`
   width: fit-content;
   height: auto;
-
   display: flex;
   justify-content: end;
   gap: 15px;
+  @media ${({ theme }) => theme.xs} {
+    gap: 5px;
+  }
 `
 const HeaderLogo = styled.img`
   width: fit-content;
@@ -181,6 +200,10 @@ const HeaderLogo = styled.img`
   @media ${({ theme }) => theme.sm} {
     height: 20px;
   }
+  @media ${({ theme }) => theme.xs} {
+    min-width: 20px;
+    min-height: 20px;
+  }
 `
 const Title = styled.h1`
   font-size: 32px;
@@ -190,14 +213,27 @@ const Title = styled.h1`
   @media ${({ theme }) => theme.lg} {
     font-size: 24px;
   }
+  @media ${({ theme }) => theme.xs} {
+    font-size: 16px;
+
+    width: 65%;
+  }
 `
 const TextSection = styled.div`
   width: 100%;
   height: 100%;
   padding: 15px 0px 5px 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 `
 
 const Desc = styled.span`
-  font-family: 'Noto';
-  line-height: 1.3;
+  font-family: 'NotoMedium';
+  line-height: 2;
+
+  @media ${({ theme }) => theme.xs} {
+    font-size: 13px;
+    line-height: 2;
+  }
 `

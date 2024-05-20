@@ -120,6 +120,9 @@ const LogoContainer = styled.div`
   height: 50px;
   opacity: 1;
   margin-left: 30px;
+  @media ${({ theme }) => theme.sm} {
+    margin-left: 10px;
+  }
 `
 
 const NavBarStyle = styled(Navbar)`

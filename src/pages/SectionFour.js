@@ -207,7 +207,10 @@ const SkillStack = styled.div`
     gap: 10px;
   }
   @media ${({ theme }) => theme.xs} {
-    gap: 3px;
+    gap: 6px;
+  }
+  @media ${({ theme }) => theme.mini} {
+    gap: 0px;
   }
 `
 const TitleText = styled.div`
@@ -229,7 +232,7 @@ const LogoContainer = styled.div`
   display: flex;
   gap: 40px;
   width: 100%;
-  flex: 1;
+
   @media ${({ theme }) => theme.lg} {
     gap: 10px;
   }
