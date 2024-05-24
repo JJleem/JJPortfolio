@@ -72,6 +72,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
+  overflow: hidden;
 
   @media ${({ theme }) => theme.lg} {
     align-items: center;
@@ -189,8 +190,8 @@ const HeaderLogoContainer = styled.div`
   }
 `
 const HeaderLogo = styled.img`
-  width: fit-content;
-  height: auto;
+
+  height: fit-content;
   object-fit: center;
   transition: all 0.6s;
 
@@ -201,8 +202,7 @@ const HeaderLogo = styled.img`
     height: 20px;
   }
   @media ${({ theme }) => theme.xs} {
-    min-width: 20px;
-    min-height: 20px;
+    max-height: 20px;
   }
 `
 const Title = styled.h1`

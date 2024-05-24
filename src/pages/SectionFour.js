@@ -89,7 +89,7 @@ const ImgZ = keyframes`
 const ImgContainer = styled.img`
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   opacity: 1;
   transform-style: preserve-3d;
   backface-visibility: hidden;
@@ -101,7 +101,7 @@ const ImgContainer = styled.img`
 const Wrapper = styled.div`
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   perspective: 1000px;
   z-index: 2;
 `
