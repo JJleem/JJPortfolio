@@ -6,8 +6,8 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import Offcanvas from 'react-bootstrap/Offcanvas'
 import { useLocation } from 'react-router-dom'
+import { height } from '@fortawesome/free-brands-svg-icons/fa42Group'
 const NavBar = () => {
-  const location = useLocation()
   return (
     <div>
       <WholeContainer>
@@ -35,11 +35,10 @@ const NavBar = () => {
                   style={{
                     display: 'flex',
                     justifyContent: 'center',
-                    // alignItems: "center",
-                    // backgroundColor: "#6CABDD",
-                    // background:
-                    //   "radial-gradient(circle,rgba(108, 171, 221, 1) 0%,rgba(59, 115, 159, 0.9710259103641457) 100%)",
-                    boxShadow: 'inset 0px 0px 3px 0px #999'
+                    boxShadow: 'inset 0px 0px 100px 0px #999',
+                    backgroundColor: 'rgba(255,255,255,0.8)',
+                    OverflowY: 'hidden',
+                    height: '100%'
                   }}
                 >
                   <OffcanvasStyle.Header closeButton></OffcanvasStyle.Header>
@@ -59,7 +58,7 @@ const NavBar = () => {
                     >
                       <Nav
                         style={{
-                          fontSize: '22px',
+                          fontSize: '24px',
                           fontWeight: 'bold',
                           color: '#000',
                           lineHeight: 1,
@@ -83,14 +82,44 @@ const NavBar = () => {
                     </OffcanvasStyle.Title>
                     <Overflow>
                       <NavStyle className="justify-content-end flex-grow-1 pe-3">
-                        <NavStyle.Link href="#sectionOne">Home</NavStyle.Link>
-                        <NavStyle.Link href="#sectionTwo">Link</NavStyle.Link>
-                        <NavStyle.Link href="#sectionThree">Home</NavStyle.Link>
-                        <NavStyle.Link href="#action2">Link</NavStyle.Link>
-                        <NavStyle.Link href="#sectionOne">Home</NavStyle.Link>
-                        <NavStyle.Link href="#sectionTwo">Link</NavStyle.Link>
-                        <NavStyle.Link href="#sectionThree">Home</NavStyle.Link>
-                        <NavStyle.Link href="#action2">Link</NavStyle.Link>
+                        <NavBarStyle.Toggle
+                          aria-controls={`offcanvasNavbar-expand-${expand}`}
+                          style={{ border: 'none' }}
+                        >
+                          <NavStyle.Link href="#sectionOne">Home</NavStyle.Link>
+                        </NavBarStyle.Toggle>
+                        <NavBarStyle.Toggle
+                          aria-controls={`offcanvasNavbar-expand-${expand}`}
+                          style={{ border: 'none' }}
+                        >
+                          <NavStyle.Link href="#sectionTwo">
+                            Typescript
+                          </NavStyle.Link>
+                        </NavBarStyle.Toggle>
+                        <NavBarStyle.Toggle
+                          aria-controls={`offcanvasNavbar-expand-${expand}`}
+                          style={{ border: 'none' }}
+                        >
+                          <NavStyle.Link href="#sectionThree">
+                            React
+                          </NavStyle.Link>
+                        </NavBarStyle.Toggle>
+                        <NavBarStyle.Toggle
+                          aria-controls={`offcanvasNavbar-expand-${expand}`}
+                          style={{ border: 'none' }}
+                        >
+                          <NavStyle.Link href="#sectionFour">
+                            Javascript
+                          </NavStyle.Link>
+                        </NavBarStyle.Toggle>
+                        <NavBarStyle.Toggle
+                          aria-controls={`offcanvasNavbar-expand-${expand}`}
+                          style={{ border: 'none' }}
+                        >
+                          <NavStyle.Link href="#sectionFive">
+                            SkillStack
+                          </NavStyle.Link>
+                        </NavBarStyle.Toggle>
                       </NavStyle>
                     </Overflow>
                   </Offcanvas.Body>
@@ -110,6 +139,7 @@ const WholeContainer = styled.div`
   width: 100%;
   position: fixed;
   z-index: 1;
+  overflow: hidden;
 `
 const LogoContainer = styled.div`
   background-image: url(${logo});
@@ -148,27 +178,38 @@ const ContainerNav = styled(Navbar)`
 `
 const NavStyle = styled(Nav)`
   font-family: 'InterBlack';
-  font-size: 50px;
-  margin-top: 50px;
+  font-size: 40px;
   text-align: center;
   display: flex;
-  gap: 30px;
+  gap: 80px;
+  border-top: 1px solid ${(props) => props.theme.gray};
+  border-bottom: 1px solid ${(props) => props.theme.gray};
+  padding: 50px 0px 50px 0px;
+  @media ${({ theme }) => theme.xs} {
+    font-size: 30px;
+    gap: 35px;
+  }
 `
 const Overflow = styled.div`
   margin-top: 50px;
   width: 100%;
-  height: 50%;
-  border: 1px solid #f00;
+  height: 700px;
 `
 const OffcanvasStyle = styled(Offcanvas)``
 
 const Git = styled.span`
+  color: ${({ theme }) => theme.indigo};
+  opacity: 0.5;
   &:hover {
-    color: ${({ theme }) => theme.dark};
+    opacity: 1;
   }
+  transition: all 0.6s;
 `
 const Insta = styled.span`
+  color: #dd2a7b;
+  opacity: 0.5;
   &:hover {
-    color: #dd2a7b;
+    opacity: 1;
   }
+  transition: all 0.6s;
 `

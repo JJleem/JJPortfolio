@@ -12,9 +12,9 @@ const Home = () => {
       <Circle />
 
       <BoxContainer>
-        <Box end={4} text={'TS'} />
-        <Box end={5} text={'React'} />
-        <Box end={5} text={'JS'} />
+        <Box end={3} text={'TS'} />
+        <Box end={4} text={'React'} />
+        <Box end={3} text={'JS'} />
       </BoxContainer>
 
       <MainText>
@@ -33,7 +33,8 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   height: 100vh;
-  background: rgb(108, 171, 221);
+  background: #3f93d9;
+  background: #3f93d9;
   background: radial-gradient(
     circle,
     rgba(70, 171, 230, 1) 0%,
@@ -54,7 +55,7 @@ const MainText = styled.div`
   line-height: 1.5;
   transition: all 0.7s;
   z-index: 2;
-
+  text-shadow: 0px 0px 4px #000;
   @media ${({ theme }) => theme.lg} {
     font-size: 36px;
     top: 45%;
@@ -99,24 +100,34 @@ const TextHilight = styled.span`
 `
 const MainImg = styled.div`
   background-image: url(${JJMain});
-  width: 500px;
-  height: 800px;
+  width: 1440px;
+  height: 1070px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   position: absolute;
   z-index: 0;
-  left: 70%;
+  left: 66%;
   top: 50%;
   transform: translate(-50%, -50%);
   transition: all 0.7s;
+  opacity: 1;
+
+  @media ${({ theme }) => theme.md} {
+    width: 1200px;
+    height: 1000px;
+  }
   @media ${({ theme }) => theme.sm} {
-    width: 300px;
-    height: 700px;
+    width: 800px;
+    height: 900px;
+    top: 53%;
   }
   @media ${({ theme }) => theme.xs} {
-    left: 85%;
-    top: 55%;
+    width: 800px;
+    height: 650px;
+    left: 67%;
+    top: 53%;
+    opacity: 1;
   }
 `
 

@@ -225,7 +225,7 @@ const TextSection = styled.div`
   padding: 15px 0px 5px 5px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 5px;
 `
 
 const Desc = styled.span`
@@ -233,7 +233,7 @@ const Desc = styled.span`
   line-height: 2;
 
   @media ${({ theme }) => theme.xs} {
-    font-size: 13px;
+    font-size: 12.5px;
     line-height: 2;
   }
 `

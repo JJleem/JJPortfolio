@@ -23,16 +23,20 @@ const SectionThree = () => {
       <Circle />
       <LogoTitle img={`${javaScript}`} text={'JavaScript'} />
       <Slide
-        imgSrc={`${dust}`}
-        title={'서울시 대기현황'}
+        imgSrc3={`${dust}`}
+        title3={'서울시 대기현황'}
         hash={'hash3'}
-        logoOne={`${javaScript}`}
-        logoTwo={`${scss}`}
-        logoThree={`${node}`}
-        desc={
-          '안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.'
+        logoOne3={`${javaScript}`}
+        logoTwo3={`${scss}`}
+        logoThree3={`${node}`}
+        desc3={
+          '서울시 공공데이터포털에서 권역구대기현황 API를 호출하여 작업한 서울시 대기현황정보입니다.'
         }
-        desc12={''}
+        desc32={
+          'CORS오류를 처음으로 만난 작업물로써 그로인하여 Node를사용해 server를열었고 그 server를 활용해 호출하였습니다.'
+        }
+        desc33={'추후 더욱 더 develop할 예정입니다.'}
+        Link3={'https://seouldustcheck-jjleem.web.app/'}
         imgSrc2={`${lotto}`}
         title2={'로또 생성기'}
         logoOne2={`${javaScript}`}
@@ -46,16 +50,22 @@ const SectionThree = () => {
           '또한 localstorage에 저장하여 저장한 번호를 열람할수있는 기능도 추가하였습니다.'
         }
         Link2={'https://lotto-generator-jjleem.web.app/'}
-        imgSrc3={`${theventi}`}
-        title3={'TheVenti 사이트 클론코딩  협업프로젝트'}
+        imgSrc={`${theventi}`}
+        title={'TheVenti 사이트 클론코딩  협업프로젝트'}
         hash3={`hash2`}
-        logoOne3={`${javaScript}`}
-        logoTwo3={`${scss}`}
-        logoThree3={`${github}`}
-        desc3={
-          '안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.안녕하세요 저는 임재준입니다. 잘부탁드립니다 잘부탁드립니다.'
+        logoOne={`${javaScript}`}
+        logoTwo={`${scss}`}
+        logoThree={`${github}`}
+        desc={
+          '팀원들과 협업하여 HTML, SCSS, JavaScript를 사용하여 사이트를 구현했으며, Github을 통해 협업 작업을 수행했습니다.'
         }
-        Link3={'https://theventi-d1217.web.app/common/common.html'}
+        desc12={
+          '메인 페이지와 공통적인 header, footer, quickmenu 등의 반응형 토글 기능을 구현했습니다. 이를 통해 사이트의 핵심적인 부분을 담당하여 프로젝트 전체에 기여할 수 있었습니다.'
+        }
+        desc13={
+          '특히 반응형 웹 개발과 Git을 활용한 협업 경험을 쌓을 수 있었습니다. 또한 팀원들과의 원활한 소통과 협업을 통해 프로젝트 관리 능력도 향상시킬 수 있었습니다.'
+        }
+        Link={'https://theventi-d1217.web.app/common/common.html'}
       />
     </Container>
   )

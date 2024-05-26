@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import CustomRightArrow from './CustomRightArrow'
 import CustomLeftArrow from './CustomLeftArrow'
 import SlideSection from './slideSection/SlideSection'
-
+import { useLocation } from 'react-router-dom'
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -25,6 +25,8 @@ const responsive = {
 }
 
 const Slide = (props) => {
+  const location = useLocation()
+
   return (
     <CarouselContainer
       swipeable={true}
@@ -79,11 +81,28 @@ const Slide = (props) => {
           logoTwo={props.logoTwo3}
           logoThree={props.logoThree3}
           desc={props.desc3}
+          descTwo={props.desc32}
+          descThree={props.desc33}
           hash={props.hash}
           Link={props.Link3}
         />
       </SlideSectionContainer>
-      <SlideSectionContainer></SlideSectionContainer>
+      {location.hash === '#sectionThree' ? (
+        <SlideSectionContainer>
+          <SlideSection
+            imgSrc={props.imgSrc4}
+            title={props.title4}
+            logoOne={props.logoOne4}
+            logoTwo={props.logoTwo4}
+            logoThree={props.logoThree4}
+            desc={props.desc4}
+            descTwo={props.desc42}
+            descThree={props.desc43}
+            hash={props.hash}
+            Link={props.Link4}
+          />
+        </SlideSectionContainer>
+      ) : null}
     </CarouselContainer>
   )
 }
