@@ -190,7 +190,7 @@ const HeaderLogoContainer = styled.div`
   }
 `
 const HeaderLogo = styled.img`
-
+  width: 30px;
   height: fit-content;
   object-fit: center;
   transition: all 0.6s;

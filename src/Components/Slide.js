@@ -52,6 +52,7 @@ const Slide = (props) => {
           logoThree={props.logoThree}
           desc={props.desc}
           descTwo={props.desc12}
+          descThree={props.desc13}
           hash={props.hash}
           Link={props.Link}
         />
