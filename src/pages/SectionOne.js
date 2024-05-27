@@ -9,7 +9,7 @@ import bitcoin from '../Components/assets/img/slideOne/Bitcoin.png'
 import login from '../Components/assets/img/slideOne/Login.png'
 import react from '../Components/assets/img/one/React.png'
 import styledcomponents from '../Components/assets/img/one/Styledcomponents.png'
-import kanban from '../Components/assets/img/slideOne/kanban.png'
+import kanbanboard from '../Components/assets/img/slideOne/kanbanboard.png'
 import hookform from '../Components/assets/img/one/hookform.png'
 import query from '../Components/assets/img/one/query.png'
 import recoil from '../Components/assets/img/one/recoil.png'
@@ -52,7 +52,7 @@ const SectionOne = () => {
           'react-hook-form 내의 formState를 통해 error 관리를하였으며, 각종 액티브한 색상변경들은 useState를 적극활용해 작업하였습니다. 현재 회원가입후 데이터를 보내는 작업은 작업진행중에 있습니다.'
         }
         Link2={'https://naverlogin-jjleem.web.app'}
-        imgSrc={`${kanban}`}
+        imgSrc={`${kanbanboard}`}
         title={'D&D TodoList'}
         logoOne={`${typescript}`}
         logoTwo={`${recoil}`}
