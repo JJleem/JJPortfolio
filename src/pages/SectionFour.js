@@ -38,30 +38,32 @@ const SectionFour = () => {
             <TextBox>
               <SkillStack>
                 <TitleText>Skill Stack</TitleText>
-                <InfoText>Programming Languages:</InfoText>
-                <LogoContainer>
-                  <Logo src={typescript} />
-                  <Logo src={js} />
-                  <Logo src={html} />
-                  <Logo src={css} />
-                  <Logo src={scss} />
-                </LogoContainer>
-                <InfoText>Frameworks/Libraries:</InfoText>
-                <LogoContainer>
-                  <Logo src={react} />
-                  <Logo src={redux} />
-                  <Logo src={node} />
-                </LogoContainer>
-                <InfoText>Tools:</InfoText>
-                <LogoContainer>
-                  <Logo src={styledcomponents} />
-                  <Logo src={github} />
-                  <Logo src={slack} />
-                </LogoContainer>
-                <InfoText>Databases:</InfoText>
-                <LogoContainer>
-                  <Logo src={firebase} />
-                </LogoContainer>
+                <InnerWrapper>
+                  <InfoText>Programming Languages:</InfoText>
+                  <LogoContainer>
+                    <Logo src={typescript} />
+                    <Logo src={js} />
+                    <Logo src={html} />
+                    <Logo src={css} />
+                    <Logo src={scss} />
+                  </LogoContainer>
+                  <InfoText>Frameworks/Libraries:</InfoText>
+                  <LogoContainer>
+                    <Logo src={react} />
+                    <Logo src={redux} />
+                    <Logo src={node} />
+                  </LogoContainer>
+                  <InfoText>Tools:</InfoText>
+                  <LogoContainer>
+                    <Logo src={styledcomponents} />
+                    <Logo src={github} />
+                    <Logo src={slack} />
+                  </LogoContainer>
+                  <InfoText>Databases:</InfoText>
+                  <LogoContainer>
+                    <Logo src={firebase} />
+                  </LogoContainer>
+                </InnerWrapper>
               </SkillStack>
             </TextBox>
           </SectionBox>
@@ -73,6 +75,15 @@ const SectionFour = () => {
 
 export default SectionFour
 
+const InnerWrapper = styled.div`
+  margin-top: 100px;
+  @media ${({ theme }) => theme.md} {
+    margin-top: 10px;
+  }
+  @media ${({ theme }) => theme.xs} {
+    margin-top: 5px;
+  }
+`
 const Container = styled.div`
   width: 100%;
   height: 100vh;
@@ -201,8 +212,9 @@ const SkillStack = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 50px;
   padding: 10px;
+
   @media ${({ theme }) => theme.md} {
     gap: 10px;
   }
@@ -222,6 +234,10 @@ const TitleText = styled.div`
   @media ${({ theme }) => theme.lg} {
     font-size: 26px;
   }
+  @media ${({ theme }) => theme.md} {
+    font-size: 16px;
+    height: 31px;
+  }
   @media ${({ theme }) => theme.sm} {
     font-size: 16px;
     margin-bottom: 10px;
@@ -232,12 +248,20 @@ const LogoContainer = styled.div`
   display: flex;
   gap: 40px;
   width: 100%;
+  margin-bottom: 40px;
+  padding-bottom: 0px;
 
   @media ${({ theme }) => theme.lg} {
     gap: 10px;
+    margin-bottom: 30px;
+  }
+  @media ${({ theme }) => theme.md} {
+    gap: 10px;
+    margin-bottom: 30px;
   }
   @media ${({ theme }) => theme.sm} {
     gap: 20px;
+    margin-bottom: 30px;
   }
 `
 const Logo = styled.img`
@@ -245,6 +269,7 @@ const Logo = styled.img`
   height: 80px;
   object-fit: center;
   padding: 5px;
+
   &:hover {
     transform: scale(1.1);
   }
@@ -264,7 +289,15 @@ const Logo = styled.img`
 const InfoText = styled.div`
   font-size: 20px;
   font-family: 'NotoMedium';
-  line-height: 2;
+  line-height: 1;
+  padding-bottom: 10px;
+  white-space: nowrap;
+  width: 300px;
+  @media ${({ theme }) => theme.lg} {
+    margin-top: 30px;
+  }
+  @media ${({ theme }) => theme.sm} {
+  }
   @media ${({ theme }) => theme.xs} {
     font-size: 16px;
   }
