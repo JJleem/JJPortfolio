@@ -87,7 +87,7 @@ const Slide = (props) => {
           Link={props.Link3}
         />
       </SlideSectionContainer>
-      {location.hash === '#sectionThree' ? (
+      {location.hash === '#sectionThree' || 'sectionFour' ? (
         <SlideSectionContainer>
           <SlideSection
             imgSrc={props.imgSrc4}

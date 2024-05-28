@@ -14,7 +14,7 @@ const Home = () => {
       <BoxContainer>
         <Box end={3} text={'TS'} />
         <Box end={4} text={'React'} />
-        <Box end={3} text={'JS'} />
+        <Box end={4} text={'JS'} />
       </BoxContainer>
 
       <MainText>

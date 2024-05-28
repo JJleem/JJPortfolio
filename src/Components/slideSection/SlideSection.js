@@ -191,7 +191,7 @@ const HeaderLogoContainer = styled.div`
 `
 const HeaderLogo = styled.img`
   width: 30px;
-  height: fit-content;
+  height: 30px;
   object-fit: center;
   transition: all 0.6s;
 

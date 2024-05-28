@@ -16,6 +16,8 @@ import html from '../Components/assets/img/one/Html.png'
 import css from '../Components/assets/img/one/Css.png'
 import theventi from '../Components/assets/img/slideThree/theventi.png'
 import github from '../Components/assets/img/one/Github.png'
+import selecto from '../Components/assets/img/slideThree/slecto.png'
+
 const SectionThree = () => {
   return (
     <Container name="SectionOne">
@@ -66,6 +68,21 @@ const SectionThree = () => {
           '특히 반응형 웹 개발과 Git을 활용한 협업 경험을 쌓을 수 있었습니다. 또한 팀원들과의 원활한 소통과 협업을 통해 프로젝트 관리 능력도 향상시킬 수 있었습니다.'
         }
         Link={'https://theventi-d1217.web.app/common/common.html'}
+        imgSrc4={`${selecto}`}
+        title4={'Selecto 커피 매장찾기'}
+        logoOne4={`${javaScript}`}
+        logoTwo4={`${html}`}
+        logoThree4={`${css}`}
+        desc4={
+          'JavaScript,html,css 를 활용해 작업한 셀렉토커피 매장찾기입니다.'
+        }
+        desc42={
+          '각 매장데이터는 직접 json파일로 구축하여 호출하였으며 순수 바닐라자바스크립트 작업하였습니다'
+        }
+        desc43={
+          'pagenation 기능과 cursor 이미지 작업을하며 많은 학습이되었습니다. '
+        }
+        Link4={'https://selecto-map-jjleem.web.app'}
       />
     </Container>
   )
