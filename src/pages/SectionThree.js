@@ -51,7 +51,7 @@ const SectionThree = () => {
         }
         Link2={'https://lotto-generator-jjleem.web.app/'}
         imgSrc={`${theventi}`}
-        title={'TheVenti 사이트 클론코딩  협업프로젝트'}
+        title={'TheVenti 협업프로젝트'}
         hash3={`hash2`}
         logoOne={`${javaScript}`}
         logoTwo={`${scss}`}

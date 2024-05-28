@@ -16,6 +16,12 @@ import slack from '../Components/assets/img/one/Slack.png'
 import html from '../Components/assets/img/one/Html.png'
 import css from '../Components/assets/img/one/Css.png'
 import node from '../Components/assets/img/one/Node.png'
+import recoil from '../Components/assets/img/one/recoil.png'
+import hook from '../Components/assets/img/one/hookform.png'
+import query from '../Components/assets/img/one/query.png'
+import dnd from '../Components/assets/img/one/dnd.png'
+import router from '../Components/assets/img/one/Router.png'
+
 const SectionFour = () => {
   const location = useLocation()
   return (
@@ -43,25 +49,33 @@ const SectionFour = () => {
                   <LogoContainer>
                     <Logo src={typescript} />
                     <Logo src={js} />
-                    <Logo src={html} />
-                    <Logo src={css} />
-                    <Logo src={scss} />
                   </LogoContainer>
                   <InfoText>Frameworks/Libraries:</InfoText>
                   <LogoContainer>
                     <Logo src={react} />
                     <Logo src={redux} />
-                    <Logo src={node} />
-                  </LogoContainer>
-                  <InfoText>Tools:</InfoText>
-                  <LogoContainer>
+                    <Logo src={router} />
+                    <Logo src={query} />
+                    <Logo src={recoil} />
+                    <Logo src={hook} />
                     <Logo src={styledcomponents} />
-                    <Logo src={github} />
-                    <Logo src={slack} />
                   </LogoContainer>
-                  <InfoText>Databases:</InfoText>
+                  <InfoText>Backend/Databases:</InfoText>
                   <LogoContainer>
                     <Logo src={firebase} />
+                    <Logo src={node} />
+                  </LogoContainer>
+
+                  <InfoText>Markup/Styling:</InfoText>
+                  <LogoContainer>
+                    <Logo src={html} />
+                    <Logo src={css} />
+                    <Logo src={scss} />
+                  </LogoContainer>
+                  <InfoText>Tools/Service:</InfoText>
+                  <LogoContainer>
+                    <Logo src={github} />
+                    <Logo src={slack} />
                   </LogoContainer>
                 </InnerWrapper>
               </SkillStack>
@@ -76,7 +90,7 @@ const SectionFour = () => {
 export default SectionFour
 
 const InnerWrapper = styled.div`
-  margin-top: 100px;
+  margin-top: 10px;
   @media ${({ theme }) => theme.md} {
     margin-top: 10px;
   }
@@ -226,13 +240,14 @@ const SkillStack = styled.div`
   }
 `
 const TitleText = styled.div`
-  font-size: 32px;
+  font-size: 24px;
   font-family: 'NotoBold';
   text-align: right;
   transition: all 0.6s;
-
+  height: 25px;
+  margin-bottom: 30px;
   @media ${({ theme }) => theme.lg} {
-    font-size: 26px;
+    font-size: 24px;
   }
   @media ${({ theme }) => theme.md} {
     font-size: 16px;
@@ -246,7 +261,7 @@ const TitleText = styled.div`
 `
 const LogoContainer = styled.div`
   display: flex;
-  gap: 40px;
+  gap: 20px;
   width: 100%;
   margin-bottom: 40px;
   padding-bottom: 0px;
@@ -256,17 +271,18 @@ const LogoContainer = styled.div`
     margin-bottom: 30px;
   }
   @media ${({ theme }) => theme.md} {
-    gap: 10px;
     margin-bottom: 30px;
   }
   @media ${({ theme }) => theme.sm} {
-    gap: 20px;
     margin-bottom: 30px;
+  }
+  @media ${({ theme }) => theme.xs} {
+    margin-bottom: 0px;
   }
 `
 const Logo = styled.img`
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   object-fit: center;
   padding: 5px;
 
@@ -279,10 +295,12 @@ const Logo = styled.img`
   }
   @media ${({ theme }) => theme.sm} {
     padding: 2px;
+    width: 45px;
+    height: 45px;
   }
   @media ${({ theme }) => theme.xs} {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
   }
 `
 
@@ -297,8 +315,8 @@ const InfoText = styled.div`
     margin-top: 30px;
   }
   @media ${({ theme }) => theme.sm} {
-  }
-  @media ${({ theme }) => theme.xs} {
-    font-size: 16px;
+    font-size: 14px;
+    padding-bottom: 5px;
+    margin-top: 8px;
   }
 `

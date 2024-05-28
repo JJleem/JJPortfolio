@@ -213,6 +213,9 @@ const Title = styled.h1`
   @media ${({ theme }) => theme.lg} {
     font-size: 24px;
   }
+  @media ${({ theme }) => theme.md} {
+    font-size: 20px;
+  }
   @media ${({ theme }) => theme.xs} {
     font-size: 16px;
 
