@@ -194,16 +194,6 @@ const HeaderLogo = styled.img`
   height: 30px;
   object-fit: center;
   transition: all 0.6s;
-
-  @media ${({ theme }) => theme.lg} {
-    height: 25px;
-  }
-  @media ${({ theme }) => theme.sm} {
-    height: 20px;
-  }
-  @media ${({ theme }) => theme.xs} {
-    max-height: 20px;
-  }
 `
 const Title = styled.h1`
   font-size: 32px;

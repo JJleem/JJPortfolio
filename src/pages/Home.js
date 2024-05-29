@@ -12,7 +12,7 @@ const Home = () => {
       <Circle />
 
       <BoxContainer>
-        <Box end={3} text={'TS'} />
+        <Box end={4} text={'TS'} />
         <Box end={4} text={'React'} />
         <Box end={4} text={'JS'} />
       </BoxContainer>

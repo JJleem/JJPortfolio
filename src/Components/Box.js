@@ -12,7 +12,7 @@ const Box = ({ end = 10, text }) => {
 
   useEffect(() => {
     if (count < end) {
-      const timerId = setTimeout(() => setCount(count + 1), 700)
+      const timerId = setTimeout(() => setCount(count + 1), 600)
       return () => clearTimeout(timerId)
     }
   }, [count])

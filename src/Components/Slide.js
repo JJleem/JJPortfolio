@@ -87,22 +87,20 @@ const Slide = (props) => {
           Link={props.Link3}
         />
       </SlideSectionContainer>
-      {location.hash === '#sectionThree' || 'sectionFour' ? (
-        <SlideSectionContainer>
-          <SlideSection
-            imgSrc={props.imgSrc4}
-            title={props.title4}
-            logoOne={props.logoOne4}
-            logoTwo={props.logoTwo4}
-            logoThree={props.logoThree4}
-            desc={props.desc4}
-            descTwo={props.desc42}
-            descThree={props.desc43}
-            hash={props.hash}
-            Link={props.Link4}
-          />
-        </SlideSectionContainer>
-      ) : null}
+      <SlideSectionContainer>
+        <SlideSection
+          imgSrc={props.imgSrc4}
+          title={props.title4}
+          logoOne={props.logoOne4}
+          logoTwo={props.logoTwo4}
+          logoThree={props.logoThree4}
+          desc={props.desc4}
+          descTwo={props.desc42}
+          descThree={props.desc43}
+          hash={props.hash}
+          Link={props.Link4}
+        />
+      </SlideSectionContainer>
     </CarouselContainer>
   )
 }
