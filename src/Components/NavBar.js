@@ -8,6 +8,13 @@ import Offcanvas from 'react-bootstrap/Offcanvas'
 import { useLocation } from 'react-router-dom'
 import { height } from '@fortawesome/free-brands-svg-icons/fa42Group'
 const NavBar = () => {
+  const location = useLocation()
+  const isSectionOne = location.hash === '#sectionOne' || location.hash === ''
+  const isSectionTwo = location.hash === '#sectionTwo'
+  const isSectionThree = location.hash === '#sectionThree'
+  const isSectionFour = location.hash === '#sectionFour'
+  const isSectionFive = location.hash === '#sectionFive'
+  console.log(location)
   return (
     <div>
       <WholeContainer>
@@ -24,10 +31,7 @@ const NavBar = () => {
                   <TextStyle>+82 10-6313-6729 / leemjaejun@gmail.com</TextStyle>
                 </NavBarStyle.Brand>
 
-                <NavBarStyle.Toggle
-                  aria-controls={`offcanvasNavbar-expand-${expand}`}
-                  style={{ border: 'none' }}
-                />
+                <Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                 <ContainerNav.Offcanvas
                   id={`offcanvasNavbar-expand-${expand}`}
                   aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -35,32 +39,55 @@ const NavBar = () => {
                   style={{
                     display: 'flex',
                     justifyContent: 'center',
-                    boxShadow: 'inset 0px 0px 100px 0px #999',
-                    backgroundColor: 'rgba(255,255,255,0.8)',
+                    backgroundColor: 'rgba(255,255,255,1)',
                     OverflowY: 'hidden',
-                    height: '100%'
+                    height: '100%',
+                    fontWeight: 'bold',
+                    border: '1px solid #f00'
                   }}
                 >
-                  <OffcanvasStyle.Header closeButton></OffcanvasStyle.Header>
-                  <Offcanvas.Body style={{ padding: '50px 0px' }}>
-                    <OffcanvasStyle.Title
-                      id={`offcanvasNavbarLabel-expand-${expand}`}
-                      style={{
-                        display: 'flex',
-                        gap: '20px',
-                        marginRight: '20px',
-                        justifyContent: 'end',
-                        fontSize: '18px',
-                        fontWeight: 'bold',
-                        color: '#286da3',
-                        transition: 'all 0.8s'
-                      }}
-                    >
+                  <Close closeButton></Close>
+                  <Offcanvas.Body>
+                    <NavStyle>
+                      <LinkStyle href="#sectionOne" isSection={isSectionOne}>
+                        {location.hash === '#sectionOne' || location.hash === ''
+                          ? '/ Home'
+                          : 'Home'}
+                      </LinkStyle>
+
+                      <LinkStyle href="#sectionTwo" isSection={isSectionTwo}>
+                        {location.hash === '#sectionTwo'
+                          ? '/ Typescript'
+                          : 'Typescript'}
+                      </LinkStyle>
+
+                      <LinkStyle
+                        href="#sectionThree"
+                        isSection={isSectionThree}
+                      >
+                        {location.hash === '#sectionThree'
+                          ? '/ React'
+                          : 'React'}
+                      </LinkStyle>
+
+                      <LinkStyle href="#sectionFour" isSection={isSectionFour}>
+                        {location.hash === '#sectionFour'
+                          ? '/ Javascript'
+                          : 'Javascript'}
+                      </LinkStyle>
+
+                      <LinkStyle href="#sectionFive" isSection={isSectionFive}>
+                        {location.hash === '#sectionFive'
+                          ? '/ SkillStack'
+                          : 'SkillStack'}
+                      </LinkStyle>
+                    </NavStyle>
+
+                    <SubTitle id={`offcanvasNavbarLabel-expand-${expand}`}>
                       <Nav
                         style={{
                           fontSize: '24px',
                           fontWeight: 'bold',
-                          color: '#000',
                           lineHeight: 1,
                           marginRight: '30px'
                         }}
@@ -79,49 +106,7 @@ const NavBar = () => {
                       >
                         <Insta>Instagram.</Insta>
                       </NavStyle.Link>
-                    </OffcanvasStyle.Title>
-                    <Overflow>
-                      <NavStyle className="justify-content-end flex-grow-1 pe-3">
-                        <NavBarStyle.Toggle
-                          aria-controls={`offcanvasNavbar-expand-${expand}`}
-                          style={{ border: 'none' }}
-                        >
-                          <NavStyle.Link href="#sectionOne">Home</NavStyle.Link>
-                        </NavBarStyle.Toggle>
-                        <NavBarStyle.Toggle
-                          aria-controls={`offcanvasNavbar-expand-${expand}`}
-                          style={{ border: 'none' }}
-                        >
-                          <NavStyle.Link href="#sectionTwo">
-                            Typescript
-                          </NavStyle.Link>
-                        </NavBarStyle.Toggle>
-                        <NavBarStyle.Toggle
-                          aria-controls={`offcanvasNavbar-expand-${expand}`}
-                          style={{ border: 'none' }}
-                        >
-                          <NavStyle.Link href="#sectionThree">
-                            React
-                          </NavStyle.Link>
-                        </NavBarStyle.Toggle>
-                        <NavBarStyle.Toggle
-                          aria-controls={`offcanvasNavbar-expand-${expand}`}
-                          style={{ border: 'none' }}
-                        >
-                          <NavStyle.Link href="#sectionFour">
-                            Javascript
-                          </NavStyle.Link>
-                        </NavBarStyle.Toggle>
-                        <NavBarStyle.Toggle
-                          aria-controls={`offcanvasNavbar-expand-${expand}`}
-                          style={{ border: 'none' }}
-                        >
-                          <NavStyle.Link href="#sectionFive">
-                            SkillStack
-                          </NavStyle.Link>
-                        </NavBarStyle.Toggle>
-                      </NavStyle>
-                    </Overflow>
+                    </SubTitle>
                   </Offcanvas.Body>
                 </ContainerNav.Offcanvas>
               </Container>
@@ -139,7 +124,7 @@ const WholeContainer = styled.div`
   width: 100%;
   position: fixed;
   z-index: 1;
-  overflow: hidden;
+  overflow-y: hidden;
 `
 const LogoContainer = styled.div`
   background-image: url(${logo});
@@ -178,23 +163,25 @@ const ContainerNav = styled(Navbar)`
 `
 const NavStyle = styled(Nav)`
   font-family: 'InterBlack';
-  font-size: 40px;
-  text-align: center;
+  font-size: 30px;
+  width: 100%;
+  height: fit-content;
   display: flex;
-  gap: 80px;
-  border-top: 1px solid ${(props) => props.theme.gray};
-  border-bottom: 1px solid ${(props) => props.theme.gray};
-  padding: 50px 0px 50px 0px;
+  justify-content: center;
+  gap: 60px;
   @media ${({ theme }) => theme.xs} {
     font-size: 30px;
     gap: 35px;
   }
 `
-const Overflow = styled.div`
-  margin-top: 50px;
-  width: 100%;
-  height: 700px;
+const LinkStyle = styled(NavStyle.Link)`
+  transition: all 0.6s;
+  text-align: left;
+  padding-left: 30px;
+  color: ${(props) =>
+    props.isSection ? props.theme.cityBold : props.theme.city} !important;
 `
+
 const OffcanvasStyle = styled(Offcanvas)``
 
 const Git = styled.span`
@@ -213,3 +200,35 @@ const Insta = styled.span`
   }
   transition: all 0.6s;
 `
+
+const SubTitle = styled(OffcanvasStyle.Title)`
+  display: flex;
+  border: 1px solid #f00;
+  width: 100%;
+  justify-content: space-between;
+  align-items: end;
+`
+// style={{
+//   display: 'flex',
+//   gap: '20px',
+//   marginRight: '20px',
+//   justifyContent: 'end',
+//   fontSize: '16px',
+//   fontWeight: 'bold',
+//   color: '#286da3',
+//   transition: 'all 0.8s',
+//   border: '1px solid #f00',
+//   width: '100%'
+// }}
+
+const Toggle = styled(NavBarStyle.Toggle)`
+  border: none;
+  outline: none;
+  box-shadow: none;
+  transition: all 0.6s;
+  &:focus {
+    box-shadow: none;
+    transform: scale(1.2);
+  }
+`
+const Close = styled(OffcanvasStyle.Header)``
