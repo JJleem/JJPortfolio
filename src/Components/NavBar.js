@@ -146,6 +146,7 @@ const SnsWrapper = styled.div`
   font-size: 20px;
   line-height: 1.5;
   padding-top: 50px;
+  bottom: 0;
 `
 const NavBarStyle = styled(Navbar)`
   z-index: 0;
