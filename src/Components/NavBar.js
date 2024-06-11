@@ -14,7 +14,7 @@ const NavBar = () => {
   const isSectionThree = location.hash === '#sectionThree'
   const isSectionFour = location.hash === '#sectionFour'
   const isSectionFive = location.hash === '#sectionFive'
-  console.log(location)
+
   return (
     <div>
       <WholeContainer>
@@ -42,8 +42,7 @@ const NavBar = () => {
                     backgroundColor: 'rgba(255,255,255,1)',
                     OverflowY: 'hidden',
                     height: '100%',
-                    fontWeight: 'bold',
-                    border: '1px solid #f00'
+                    fontWeight: 'bold'
                   }}
                 >
                   <Close closeButton></Close>
@@ -82,18 +81,7 @@ const NavBar = () => {
                           : 'SkillStack'}
                       </LinkStyle>
                     </NavStyle>
-
-                    <SubTitle id={`offcanvasNavbarLabel-expand-${expand}`}>
-                      <Nav
-                        style={{
-                          fontSize: '24px',
-                          fontWeight: 'bold',
-                          lineHeight: 1,
-                          marginRight: '30px'
-                        }}
-                      >
-                        JJ Portfolio
-                      </Nav>
+                    <SnsWrapper>
                       <NavStyle.Link
                         href="https://github.com/JJleem"
                         target="_blank"
@@ -106,6 +94,16 @@ const NavBar = () => {
                       >
                         <Insta>Instagram.</Insta>
                       </NavStyle.Link>
+                    </SnsWrapper>
+                    <SubTitle id={`offcanvasNavbarLabel-expand-${expand}`}>
+                      <Nav
+                        style={{
+                          fontSize: '24px',
+                          fontWeight: 'bold',
+                          lineHeight: 1,
+                          marginRight: '30px'
+                        }}
+                      ></Nav>
                     </SubTitle>
                   </Offcanvas.Body>
                 </ContainerNav.Offcanvas>
@@ -139,7 +137,16 @@ const LogoContainer = styled.div`
     margin-left: 10px;
   }
 `
-
+const SnsWrapper = styled.div`
+  display: flex;
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  gap: 20px;
+  font-size: 20px;
+  line-height: 1.5;
+  padding-top: 50px;
+`
 const NavBarStyle = styled(Navbar)`
   z-index: 0;
   width: 100%;
@@ -169,6 +176,9 @@ const NavStyle = styled(Nav)`
   display: flex;
   justify-content: center;
   gap: 60px;
+  height: fit-content;
+
+  margin-top: 60px;
   @media ${({ theme }) => theme.xs} {
     font-size: 30px;
     gap: 35px;
@@ -203,23 +213,16 @@ const Insta = styled.span`
 
 const SubTitle = styled(OffcanvasStyle.Title)`
   display: flex;
-  border: 1px solid #f00;
   width: 100%;
   justify-content: space-between;
   align-items: end;
+  position: absolute;
+  bottom: 200px;
+  right: -175px;
+  transform: rotate(270deg);
+  color: ${({ theme }) => theme.city};
+  z-index: 2;
 `
-// style={{
-//   display: 'flex',
-//   gap: '20px',
-//   marginRight: '20px',
-//   justifyContent: 'end',
-//   fontSize: '16px',
-//   fontWeight: 'bold',
-//   color: '#286da3',
-//   transition: 'all 0.8s',
-//   border: '1px solid #f00',
-//   width: '100%'
-// }}
 
 const Toggle = styled(NavBarStyle.Toggle)`
   border: none;

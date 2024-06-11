@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { styled } from 'styled-components'
 import { useLocation } from 'react-router-dom'
-const Box = ({ end = 10, text }) => {
+const Box = ({ end = 10, text, time }) => {
   const [count, setCount] = useState(0)
-
   const location = useLocation()
-
   useEffect(() => {
     setCount(0)
   }, [location.hash])
 
   useEffect(() => {
     if (count < end) {
-      const timerId = setTimeout(() => setCount(count + 1), 600)
+      const timerId = setTimeout(() => setCount(count + 1), time)
       return () => clearTimeout(timerId)
     }
   }, [count])

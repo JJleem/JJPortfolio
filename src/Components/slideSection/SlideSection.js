@@ -116,6 +116,10 @@ const LinkStyle = styled(Link)`
   line-height: 1.5;
   font-weight: bold;
   font-family: 'NotoBold';
+  transition: all 0.6s;
+  &:hover {
+    transform: scale(1.2);
+  }
 `
 const FontAwesomeIconStyle = styled(FontAwesomeIcon)`
   z-index: 1;

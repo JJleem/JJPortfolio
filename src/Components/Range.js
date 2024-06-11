@@ -300,7 +300,7 @@ const rangeInnerAnimationThree = keyframes`
   }
   100% {
     opacity:1;
-    top:30%;
+    top:40%;
     width:3px;
   
    
@@ -354,7 +354,7 @@ const rangeInnerAnimationFour = keyframes`
   }
   100% {
     opacity:1;
-    top:40%;
+    top:55%;
     width:3px;
   
    
