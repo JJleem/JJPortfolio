@@ -59,9 +59,9 @@ const SlideSection = (props) => {
           <Desc>{props.descTwo}</Desc>
           <Desc>{props.descThree}</Desc>
         </TextSection>
-        <GitLinkStyle to={props.Link} target="_blank" hash={props.hash}>
+        {/* <GitLinkStyle to={props.Link} target="_blank" hash={props.hash}>
           보러가기
-        </GitLinkStyle>
+        </GitLinkStyle> */}
       </TextContainer>
     </Container>
   )
