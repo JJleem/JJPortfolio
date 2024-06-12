@@ -26,9 +26,17 @@ const NavBar = () => {
               className="bg-body-tertiary mb-3"
             >
               <Container fluid>
-                <NavBarStyle.Brand href="#sectionOne">
+                <NavBarStyle.Brand
+                  href="#sectionOne"
+                  style={{
+                    display: 'flex',
+                    // gap: '180px',
+                    flexDirection: 'column'
+                  }}
+                >
                   <LogoContainer />
-                  <TextStyle>+82 10-6313-6729 / leemjaejun@gmail.com</TextStyle>
+                  {/* <TextStyle>+82 10-6313-6729</TextStyle>
+                  <TextStyle>/ leemjaejun@gmail.com</TextStyle> */}
                 </NavBarStyle.Brand>
 
                 <Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
@@ -42,44 +50,68 @@ const NavBar = () => {
                     backgroundColor: 'rgba(255,255,255,1)',
                     OverflowY: 'hidden',
                     height: '100%',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
+                    width: '340px'
                   }}
                 >
                   <Close closeButton></Close>
                   <Offcanvas.Body>
                     <NavStyle>
-                      <LinkStyle href="#sectionOne" isSection={isSectionOne}>
-                        {location.hash === '#sectionOne' || location.hash === ''
-                          ? '/ Home'
-                          : 'Home'}
-                      </LinkStyle>
-
-                      <LinkStyle href="#sectionTwo" isSection={isSectionTwo}>
-                        {location.hash === '#sectionTwo'
-                          ? '/ Typescript'
-                          : 'Typescript'}
-                      </LinkStyle>
-
-                      <LinkStyle
-                        href="#sectionThree"
-                        isSection={isSectionThree}
+                      <Toggle
+                        aria-controls={`offcanvasNavbar-expand-${expand}`}
                       >
-                        {location.hash === '#sectionThree'
-                          ? '/ React'
-                          : 'React'}
-                      </LinkStyle>
-
-                      <LinkStyle href="#sectionFour" isSection={isSectionFour}>
-                        {location.hash === '#sectionFour'
-                          ? '/ Javascript'
-                          : 'Javascript'}
-                      </LinkStyle>
-
-                      <LinkStyle href="#sectionFive" isSection={isSectionFive}>
-                        {location.hash === '#sectionFive'
-                          ? '/ SkillStack'
-                          : 'SkillStack'}
-                      </LinkStyle>
+                        <LinkStyle href="#sectionOne" isSection={isSectionOne}>
+                          {location.hash === '#sectionOne' ||
+                          location.hash === ''
+                            ? '/ Home'
+                            : 'Home'}
+                        </LinkStyle>
+                      </Toggle>
+                      <Toggle
+                        aria-controls={`offcanvasNavbar-expand-${expand}`}
+                      >
+                        <LinkStyle href="#sectionTwo" isSection={isSectionTwo}>
+                          {location.hash === '#sectionTwo'
+                            ? '/ Typescript'
+                            : 'Typescript'}
+                        </LinkStyle>
+                      </Toggle>
+                      <Toggle
+                        aria-controls={`offcanvasNavbar-expand-${expand}`}
+                      >
+                        <LinkStyle
+                          href="#sectionThree"
+                          isSection={isSectionThree}
+                        >
+                          {location.hash === '#sectionThree'
+                            ? '/ React'
+                            : 'React'}
+                        </LinkStyle>
+                      </Toggle>
+                      <Toggle
+                        aria-controls={`offcanvasNavbar-expand-${expand}`}
+                      >
+                        <LinkStyle
+                          href="#sectionFour"
+                          isSection={isSectionFour}
+                        >
+                          {location.hash === '#sectionFour'
+                            ? '/ Javascript'
+                            : 'Javascript'}
+                        </LinkStyle>
+                      </Toggle>
+                      <Toggle
+                        aria-controls={`offcanvasNavbar-expand-${expand}`}
+                      >
+                        <LinkStyle
+                          href="#sectionFive"
+                          isSection={isSectionFive}
+                        >
+                          {location.hash === '#sectionFive'
+                            ? '/ SkillStack'
+                            : 'SkillStack'}
+                        </LinkStyle>
+                      </Toggle>
                     </NavStyle>
                     <SnsWrapper>
                       <NavStyle.Link
@@ -159,6 +191,7 @@ const TextStyle = styled(Navbar)`
   color: ${({ theme }) => theme.lightgray};
   margin-left: 30px;
   transition: all 0.7s;
+  margin-bottom: -8px;
   @media ${({ theme }) => theme.lg} {
     font-size: 10px;
   }

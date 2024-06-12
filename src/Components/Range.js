@@ -27,7 +27,7 @@ const Range = () => {
             in={location.hash === '#sectionOne' || location.hash === ''}
             timeout={-500}
             classNames="page-transition"
-            unmountOnExit="true"
+            unmountOnExit
             exit
           >
             <div key={location.hash || `#sectionOne`}>
@@ -182,6 +182,7 @@ const Container = styled.div`
   position: absolute;
   top: 50%;
   left: 50px;
+  transform: translate(-50%, -50%);
   z-index: 1;
   animation-fill-mode: forwards !important;
   animation: ${rangeAnimation} 0.8s linear;
@@ -261,6 +262,7 @@ const ContainerTwo = styled.div`
   top: 50%;
   left: 50px;
   z-index: 1;
+  transform: translate(-50%, -50%);
   animation-fill-mode: forwards !important;
   animation: ${rangeAnimationTwo} 1s linear;
   box-shadow: 0px 0px 1px rgba(45, 121, 199, 1);
@@ -326,6 +328,7 @@ const ContainerThree = styled.div`
   top: 50%;
   left: 50px;
   z-index: 1;
+  transform: translate(-50%, -50%);
   animation-fill-mode: forwards !important;
   animation: ${rangeAnimationTwo} 1s linear;
 
@@ -337,6 +340,7 @@ const ContainerThree = styled.div`
 const RangeStyleThree = styled.div`
   width: 5px;
   height: 150px;
+
   background-color: rgba(182, 234, 248);
   animation-fill-mode: forwards !important;
   animation: ${rangeStyleAnimationTwo} 1s linear;
@@ -377,6 +381,7 @@ const ContainerFour = styled.div`
   position: fixed;
   top: 50%;
   left: 50px;
+  transform: translate(-50%, -50%);
   z-index: 1;
   animation-fill-mode: forwards !important;
   animation: ${rangeAnimationTwo} 1s linear;
@@ -432,6 +437,7 @@ const ContainerFive = styled.div`
   position: fixed;
   top: 50%;
   left: 50px;
+  transform: translate(-50%, -50%);
   z-index: 1;
   animation-fill-mode: forwards !important;
   animation: ${rangeAnimationTwo} 1s linear;

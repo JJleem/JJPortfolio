@@ -59,6 +59,9 @@ const SlideSection = (props) => {
           <Desc>{props.descTwo}</Desc>
           <Desc>{props.descThree}</Desc>
         </TextSection>
+        <GitLinkStyle to={props.Link} target="_blank" hash={props.hash}>
+          보러가기
+        </GitLinkStyle>
       </TextContainer>
     </Container>
   )
@@ -104,6 +107,27 @@ const LinkStyle = styled(Link)`
   position: absolute;
   right: 10px;
   top: 10px;
+  width: 80px;
+  height: 20px;
+  ${(props) => getButtonStyle(props.hash)}
+  text-decoration: none;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  padding: 0px 5px 0px 5px;
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: bold;
+  font-family: 'NotoBold';
+  transition: all 0.6s;
+  &:hover {
+    transform: scale(1.2);
+  }
+`
+const GitLinkStyle = styled(Link)`
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
   width: 80px;
   height: 20px;
   ${(props) => getButtonStyle(props.hash)}
@@ -209,6 +233,7 @@ const Title = styled.h1`
   }
   @media ${({ theme }) => theme.md} {
     font-size: 20px;
+    line-height: 2;
   }
   @media ${({ theme }) => theme.xs} {
     font-size: 16px;

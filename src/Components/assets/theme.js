@@ -3,8 +3,10 @@ const size = {
   xs: '430px',
   sm: '576px',
   md: '768px',
+  slg: '900px',
   lg: '1199px',
-  xl: '1200px'
+  xl: '1200px',
+  xxl: `1630px`
 }
 
 const theme = {
@@ -35,8 +37,10 @@ const theme = {
   xs: `(max-width: ${size.xs})`,
   sm: `(max-width: ${size.sm})`,
   md: `(max-width: ${size.md})`,
+  slg: `(max-width: ${size.slg})`,
   lg: `(max-width: ${size.lg})`,
-  xl: `(min-width: ${size.xl})`
+  xl: `(min-width: ${size.xl})`,
+  xxl: `(max-width: ${size.xxl})`
 }
 
 export default theme

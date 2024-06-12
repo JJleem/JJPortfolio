@@ -30,7 +30,7 @@ function App() {
       )
       switch (location.hash) {
         case '#sectionOne':
-          setBackgroundColor('#286da3')
+          setBackgroundColor(' rgba(80, 90, 200, 1)')
           break
         case '#sectionTwo':
           setBackgroundColor('rgba(45, 121, 199, 1)')
