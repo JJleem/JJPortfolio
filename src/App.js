@@ -12,6 +12,7 @@ import Sns from './Components/Sns'
 import BottomBanner from './Components/BottomBanner'
 import { useEffect, useState, useRef } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
+import SectionFive from './pages/SectionFive'
 
 function App() {
   const location = useLocation()
@@ -43,6 +44,9 @@ function App() {
           break
         case '#sectionFive':
           setBackgroundColor('black')
+          break
+        case '#sectionSix':
+          setBackgroundColor('gray')
           break
         default:
           setBackgroundColor('#286da3')
@@ -81,7 +85,8 @@ function App() {
       'sectionTwo',
       'sectionThree',
       'sectionFour',
-      `sectionFive`
+      `sectionFive`,
+      `sectionSix`
     ]
   }
 
@@ -114,6 +119,9 @@ function App() {
         </Section>
         <Section>
           <SectionFour />
+        </Section>
+        <Section>
+          <SectionFive />
         </Section>
       </SectionsContainer>
     </div>
