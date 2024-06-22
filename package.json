@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
@@ -18,6 +19,7 @@
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.3.1",
     "react-fullpage": "^0.1.19",
+    "react-hook-form": "^7.52.0",
     "react-multi-carousel": "^2.8.5",
     "react-router-dom": "^6.23.0",
     "react-scripts": "5.0.1",

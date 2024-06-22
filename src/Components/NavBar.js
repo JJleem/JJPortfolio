@@ -14,6 +14,7 @@ const NavBar = () => {
   const isSectionThree = location.hash === '#sectionThree'
   const isSectionFour = location.hash === '#sectionFour'
   const isSectionFive = location.hash === '#sectionFive'
+  const isSectionSix = location.hash === '#sectionSix'
 
   return (
     <div>
@@ -110,6 +111,15 @@ const NavBar = () => {
                           {location.hash === '#sectionFive'
                             ? '/ SkillStack'
                             : 'SkillStack'}
+                        </LinkStyle>
+                      </Toggle>
+                      <Toggle
+                        aria-controls={`offcanvasNavbar-expand-${expand}`}
+                      >
+                        <LinkStyle href="#sectionSix" isSection={isSectionSix}>
+                          {location.hash === '#sectionSix'
+                            ? '/ Contact'
+                            : 'Contact'}
                         </LinkStyle>
                       </Toggle>
                     </NavStyle>
