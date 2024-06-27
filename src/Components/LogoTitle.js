@@ -40,7 +40,8 @@ const TitleAnimation = keyframes`
 `
 const Container = styled.div`
   position: absolute;
-  top: 12%;
+
+  top: 10%;
   left: 10%;
   display: flex;
   gap: 10px;
@@ -51,9 +52,6 @@ const Container = styled.div`
 
   @media ${({ theme }) => theme.lg} {
     position: absolute;
-    top: 12%;
-    left: 10%;
-    gap: 10px;
     animation: ${TitleAnimation} 1.5s linear;
   }
   @media ${({ theme }) => theme.xs} {

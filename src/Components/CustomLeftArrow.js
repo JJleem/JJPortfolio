@@ -17,7 +17,7 @@ export default CustomLeftArrow
 const LeftArrow = styled.button`
   position: absolute;
   font-size: 20px;
-  top: 10px;
+  top: 40px;
   right: 80px;
   background-color: transparent;
   cursor: pointer;
@@ -30,7 +30,7 @@ const LeftArrow = styled.button`
   }
   @media ${({ theme }) => theme.xs} {
     font-size: 18px;
-    top: 12px;
+    top: 30px;
     right: 50px;
   }
 `

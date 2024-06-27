@@ -13,8 +13,8 @@ export default CustomRightArrow
 const RightArrow = styled.button`
   font-size: 20px;
   position: absolute;
-  top: 10px;
-  right: 0;
+  top: 40px;
+  right: 10px;
   background-color: transparent;
   cursor: pointer;
   transition: all 0.6s;
@@ -25,8 +25,8 @@ const RightArrow = styled.button`
   @media ${({ theme }) => theme.sm} {
     font-size: 20px;
     position: absolute;
-    top: 10px;
-    right: 0px;
+    top: 40px;
+    right: 5px;
     background-color: transparent;
     cursor: pointer;
     transition: all 0.6s;
@@ -37,6 +37,7 @@ const RightArrow = styled.button`
   }
   @media ${({ theme }) => theme.xs} {
     font-size: 18px;
-    top: 12px;
+    top: 30px;
+    right: 0;
   }
 `

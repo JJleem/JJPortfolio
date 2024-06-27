@@ -11,7 +11,7 @@ const Home = () => {
       <Pattern />
       <Circle />
       <BoxContainer>
-        <Box end={4} text={'TS'} time={300} linkto={'#sectionTwo'} />
+        <Box end={5} text={'TS'} time={300} linkto={'#sectionTwo'} />
         <Box end={4} text={'React'} time={400} linkto={'#sectionThree'} />
         <Box end={4} text={'JS'} time={500} linkto={'#sectionFour'} />
       </BoxContainer>

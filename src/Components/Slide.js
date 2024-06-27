@@ -101,6 +101,22 @@ const Slide = (props) => {
           Link={props.Link4}
         />
       </SlideSectionContainer>
+      {location.hash === '#sectionTwo' && (
+        <SlideSectionContainer>
+          <SlideSection
+            imgSrc={props.imgSrc5}
+            title={props.title5}
+            logoOne={props.logoOne5}
+            logoTwo={props.logoTwo5}
+            logoThree={props.logoThree5}
+            desc={props.desc5}
+            descTwo={props.desc52}
+            descThree={props.desc53}
+            hash={props.hash}
+            Link={props.Link5}
+          />
+        </SlideSectionContainer>
+      )}
     </CarouselContainer>
   )
 }
@@ -108,7 +124,7 @@ const Slide = (props) => {
 export default Slide
 
 const CarouselContainer = styled(Carousel)`
-  top: 60%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
